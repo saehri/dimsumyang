@@ -11,6 +11,10 @@ module.exports = {
         calistoga: 'var(--calistoga)',
         outfit: 'var(--outfit)',
       },
+      screens: {
+        'h-xs': {raw: '(min-height: 580px)'},
+        'h-s': {raw: '(min-height: 690px)'},
+      },
     },
   },
   plugins: [],
