@@ -1,40 +1,20 @@
+'use client';
+
 import Link from 'next/link';
+import {useState} from 'react';
+import MobileMenuToggleButton from '../buttons/mobile-menu-toggle-button';
 
 export default function Header() {
+  const [mobileHeaderVisible, setMobileHeaderVisible] =
+    useState<boolean>(false);
+
   return (
     <div>
       <div className='flex items-end pt-10 px-8'>
-        <button className='h-4 w-6 rounded-full bg-transparent outline-transparent focus:outline-transparent block ml-auto mb-12 relative z-50'>
-          <svg
-            viewBox='0 0 25 17'
-            className='text-red-500'
-            fill='currentColor'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              d='M24 8.49219L1 8.49219'
-              stroke='#E54126'
-              stroke-width='2'
-              stroke-miterlimit='10'
-              stroke-linecap='round'
-            />
-            <path
-              d='M9.13843 0.999909L0.999967 8.49219'
-              stroke='#E54126'
-              stroke-width='2'
-              stroke-miterlimit='10'
-              stroke-linecap='round'
-            />
-            <path
-              d='M9.13843 16L0.999967 8.49218'
-              stroke='#E54126'
-              stroke-width='2'
-              stroke-miterlimit='10'
-              stroke-linecap='round'
-            />
-          </svg>
-        </button>
-
+        <MobileMenuToggleButton
+          state={mobileHeaderVisible}
+          setStatus={setMobileHeaderVisible}
+        />
         <MobileMenu />
       </div>
     </div>
