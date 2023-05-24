@@ -2,6 +2,7 @@ import Head from 'next/head';
 import {Outfit, Calistoga} from 'next/font/google';
 
 import './globals.css';
+import Header from '@/components/header/header';
 
 const outfit = Outfit({weight: ['400'], variable: '--outfit'});
 const calistoga = Calistoga({weight: ['400'], variable: '--calistoga'});
@@ -92,6 +93,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       </Head>
 
       <body className={`${outfit.variable} ${calistoga.variable}`}>
+        <Header />
         {children}
       </body>
     </html>
