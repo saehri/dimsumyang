@@ -4,8 +4,12 @@ import {Outfit, Calistoga} from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header/header';
 
-const outfit = Outfit({weight: ['400'], variable: '--outfit'});
-const calistoga = Calistoga({weight: ['400'], variable: '--calistoga'});
+const outfit = Outfit({preload: false, weight: ['400'], variable: '--outfit'});
+const calistoga = Calistoga({
+  preload: false,
+  weight: ['400'],
+  variable: '--calistoga',
+});
 
 export const metadata = {
   title: 'DimsumYang - Dimsum Prasmananya Indonesia',
