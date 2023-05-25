@@ -6,7 +6,8 @@ import MobileMenuToggleButton from '../buttons/mobile-menu-toggle-button';
 import Image from 'next/image';
 
 export default function Header() {
-  const [mobileHeaderVisible, setMobileHeaderVisible] = useState<boolean>(true);
+  const [mobileHeaderVisible, setMobileHeaderVisible] =
+    useState<boolean>(false);
 
   return (
     <div>
@@ -19,15 +20,17 @@ export default function Header() {
         <MobileMenu state={mobileHeaderVisible} />
 
         <div
-          className='fixed left-0 top-0 z-40 opacity-10 sm:hidden'
+          className='fixed w-full left-0 top-0 z-40 sm:hidden opacity-10'
           aria-hidden='true'
+          style={{paddingTop: 'calc((103 / 430) * 100%)'}}
         >
-          <Image
-            src='/assets/decoration/mobile%20top%20decoration.png'
-            alt=''
-            width={window.innerWidth}
-            height={(window.innerWidth * 430) / 103}
-          />
+          <div className='absolute inset-0'>
+            <Image
+              src='/assets/decoration/mobile%20top%20decoration.png'
+              alt=''
+              fill={true}
+            />
+          </div>
         </div>
       </div>
     </div>
