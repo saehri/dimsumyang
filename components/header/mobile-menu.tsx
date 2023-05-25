@@ -7,35 +7,43 @@ const menuStyle = 'flex flex-col gap-2 h-xs:gap-4 h-s:gap-8 items-end xs:mb-8';
 const animationEasing = [0.32, 0.72, 0, 1];
 const imgAnimationVariant = {
   initial: {
-    y: '-30%',
+    y: '-25%',
     x: -200,
     opacity: 0,
     transition: {
-      duration: 0.1,
+      duration: 0.05,
       type: 'spring',
       stiffness: 35,
       ease: animationEasing,
     },
   },
   animate: {
-    y: '-30%',
-    x: 0,
+    y: '-25%',
+    x: '-33.33333333%',
+    rotate: [0, 360],
     opacity: 1,
     transition: {
-      duration: 0.1,
+      duration: 0.05,
       delay: 0.3,
       type: 'spring',
       stiffness: 35,
       ease: animationEasing,
+      rotate: {
+        delay: 1,
+        duration: 10,
+        repeat: 'infinity',
+        ease: 'linear',
+      },
     },
   },
 };
+
 const linkAnimationVariant = {
   initial: (index: number) => ({
     x: 200,
     opacity: 0,
     transition: {
-      duration: 0.1,
+      duration: 0.05,
       delay: index / 10,
       type: 'spring',
       stiffness: 50,
@@ -46,13 +54,25 @@ const linkAnimationVariant = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.1,
-      delay: 0.3 + index / 10,
+      duration: 0.05,
+      delay: index / 10,
       type: 'spring',
       stiffness: 50,
       ease: animationEasing,
     },
   }),
+};
+
+const menuAnimationVariant = {
+  initial: {
+    left: '100%',
+    transition: {
+      delay: 0.5,
+    },
+  },
+  animate: {
+    left: 0,
+  },
 };
 
 export default function MobileMenu({state}: {state: boolean}) {
@@ -62,18 +82,8 @@ export default function MobileMenu({state}: {state: boolean}) {
     <motion.div
       animate={status}
       initial={false}
-      variants={{
-        initial: {
-          left: '100%',
-          transition: {
-            delay: 0.7,
-          },
-        },
-        animate: {
-          left: 0,
-        },
-      }}
-      transition={{duration: 0.7, ease: animationEasing}}
+      variants={menuAnimationVariant}
+      transition={{duration: 1, ease: animationEasing}}
       className='bg-yellow-400  pt-28 pr-8 pb-8 fixed z-30 top-0 left-0 h-screen w-full font-calistoga text-2xl text-slate-950 lg:hidden overflow-hidden'
     >
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
@@ -134,14 +144,14 @@ export default function MobileMenu({state}: {state: boolean}) {
 
       <motion.div
         aria-hidden='true'
-        className='-translate-y-1/3'
+        className='-translate-x-1/3 -translate-y-1/4'
         variants={imgAnimationVariant}
       >
         <Image
-          src='/assets/decoration/mobile%20nav%20decoration.png'
+          src='/assets/decoration/nav%20decoration.png'
           alt=''
+          width={334}
           height={334}
-          width={212}
         />
       </motion.div>
     </motion.div>
