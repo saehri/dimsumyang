@@ -61,6 +61,7 @@ export default function MobileMenu({state}: {state: boolean}) {
   return (
     <motion.div
       animate={status}
+      initial={false}
       variants={{
         initial: {
           left: '100%',
