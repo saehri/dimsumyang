@@ -24,19 +24,19 @@ export default function MobileBottomNavigation() {
 
   return (
     <div className='fixed flex justify-between z-50 bottom-0 left-0 w-full py-2 px-8 bg-red-500 sm:hidden'>
-      <Link href='/'>
+      <Link href='/' onClick={() => setActive('/')}>
         <NavIcon label='Home' active={active} id={'/'}>
           <HomeIcon />
         </NavIcon>
       </Link>
 
-      <Link href='/menu'>
+      <Link href='/menu' onClick={() => setActive('/menu')}>
         <NavIcon label='Menu' active={active} id={'/menu'}>
           <MenuIcon />
         </NavIcon>
       </Link>
 
-      <Link href='/prasmanan'>
+      <Link href='/prasmanan' onClick={() => setActive('/prasmanan')}>
         <NavIcon label='Prasmanan' active={active} id={'/prasmanan'}>
           <PrasmananIcon />
         </NavIcon>
@@ -46,7 +46,6 @@ export default function MobileBottomNavigation() {
         onClick={() =>
           setActive((prev) => (prev === 'beli' ? lastActive : 'beli'))
         }
-        onBlur={() => setActive(lastActive)}
       >
         <NavIcon label='Mulai Order' active={active} id={'beli'}>
           <OrderIcon />
