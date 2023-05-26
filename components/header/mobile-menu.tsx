@@ -80,11 +80,18 @@ export default function MobileMenu({state}: {state: boolean}) {
 
   return (
     <motion.div
+      style={{
+        background: `no-repeat top url('/assets/decoration/mobile top decoration yellow.png'),
+     no-repeat bottom url('/assets/decoration/mobile bottom decoration yellow.png')`,
+        backgroundSize: 'contain',
+        backgroundAttachment: 'fixed',
+        backgroundColor: 'rgb(250, 204, 21)',
+      }}
       animate={status}
       initial={false}
       variants={menuAnimationVariant}
       transition={{duration: 1, ease: animationEasing}}
-      className='bg-yellow-400  pt-28 pr-8 pb-8 fixed z-30 top-0 left-0 h-screen w-full font-calistoga text-2xl text-slate-950 sm:hidden overflow-hidden'
+      className='pt-28 pr-8 pb-8 fixed z-30 top-0 left-0 h-screen w-full font-calistoga text-2xl text-slate-950 sm:hidden overflow-hidden max-sm:bg-btm-page-deco max-sm:bg-left-bottom max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-fixed bg-blend-darken'
     >
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
         <motion.div variants={linkAnimationVariant} custom={1}>
