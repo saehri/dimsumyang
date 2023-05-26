@@ -44,10 +44,11 @@ export default function MobileBottomNavigation() {
 
       <button
         onClick={() =>
-          setActive((prev) => (prev === '/beli' ? lastActive : '/beli'))
+          setActive((prev) => (prev === 'beli' ? lastActive : 'beli'))
         }
+        onBlur={() => setActive(lastActive)}
       >
-        <NavIcon label='Mulai Order' active={active} id={'/beli'}>
+        <NavIcon label='Mulai Order' active={active} id={'beli'}>
           <OrderIcon />
         </NavIcon>
       </button>
