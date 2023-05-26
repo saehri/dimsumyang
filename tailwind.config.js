@@ -11,9 +11,18 @@ module.exports = {
         calistoga: 'var(--calistoga)',
         outfit: 'var(--outfit)',
       },
+      backgroundImage: {
+        'deco-top-yellow':
+          "url('/assets/decoration/mobile top decoration yellow.png')",
+        'deco-top': "url('/assets/decoration/mobile top decoration.png')",
+        'deco-bottom-yellow':
+          "url('/assets/decoration/mobile bottom decoration yellow.png')",
+        'deco-bottom': "url('/assets/decoration/mobile bottom decoration.png')",
+      },
       screens: {
         'h-xs': {raw: '(min-height: 580px)'},
         'h-s': {raw: '(min-height: 690px)'},
+        'max-sm': {max: '640px'},
       },
     },
   },
