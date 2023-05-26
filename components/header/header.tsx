@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {useState} from 'react';
-import Image from 'next/image';
 
 import MobileMenu from './mobile-menu';
 import MobileMenuToggleButton from '../buttons/mobile-menu-toggle-button';
@@ -23,26 +22,6 @@ export default function Header() {
         />
 
         <MobileMenu state={mobileHeaderVisible} />
-
-        <HeaderMobileDecoration />
-      </div>
-    </div>
-  );
-}
-
-function HeaderMobileDecoration() {
-  return (
-    <div
-      className='fixed w-full left-0 top-0 z-40 sm:hidden opacity-10'
-      aria-hidden='true'
-      style={{paddingTop: 'calc((103 / 430) * 100%)'}}
-    >
-      <div className='absolute inset-0'>
-        <Image
-          src='/assets/decoration/mobile%20top%20decoration.png'
-          alt=''
-          fill={true}
-        />
       </div>
     </div>
   );
