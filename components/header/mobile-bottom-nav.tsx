@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
-import {Dispatch, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {motion} from 'framer-motion';
+import {usePathname} from 'next/navigation';
 
 import HomeIcon from '../icons/home-icon';
 import MenuIcon from '../icons/menu-icon';
@@ -10,40 +13,41 @@ import OrderIcon from '../icons/order-icon';
 const animationEasing = [0.32, 0.72, 0, 1];
 
 export default function MobileBottomNavigation() {
-  const [active, setActive] = useState<number>(0);
+  const [lastActive, setLastActive] = useState<string>('/');
+  const [active, setActive] = useState<string | null>('/');
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setActive(pathname);
+    setLastActive(pathname);
+  }, [pathname]);
 
   return (
     <div className='fixed flex justify-between z-50 bottom-0 left-0 w-full py-2 px-8 bg-red-500 sm:hidden'>
       <Link href='/'>
-        <NavIcon label='Home' setActive={setActive} active={active} index={0}>
+        <NavIcon label='Home' active={active} id={'/'}>
           <HomeIcon />
         </NavIcon>
       </Link>
 
-      <Link href='/'>
-        <NavIcon label='Menu' setActive={setActive} active={active} index={1}>
+      <Link href='/menu'>
+        <NavIcon label='Menu' active={active} id={'/menu'}>
           <MenuIcon />
         </NavIcon>
       </Link>
 
-      <Link href='/'>
-        <NavIcon
-          label='Prasmanan'
-          setActive={setActive}
-          active={active}
-          index={2}
-        >
+      <Link href='/prasmanan'>
+        <NavIcon label='Prasmanan' active={active} id={'/prasmanan'}>
           <PrasmananIcon />
         </NavIcon>
       </Link>
 
-      <button>
-        <NavIcon
-          label='Mulai Order'
-          setActive={setActive}
-          active={active}
-          index={3}
-        >
+      <button
+        onClick={() =>
+          setActive((prev) => (prev === '/beli' ? lastActive : '/beli'))
+        }
+      >
+        <NavIcon label='Mulai Order' active={active} id={'/beli'}>
           <OrderIcon />
         </NavIcon>
       </button>
@@ -54,19 +58,17 @@ export default function MobileBottomNavigation() {
 type NavIconProps = {
   children: React.ReactNode;
   label: string;
-  setActive: Dispatch<React.SetStateAction<number>>;
-  active: number;
-  index: number;
+  active: string | null;
+  id: string;
 };
 
 function NavIcon({
   children,
   label,
-  setActive,
   active,
-  index,
+  id,
 }: NavIconProps): React.ReactElement {
-  const status = active === index ? 'open' : 'close';
+  const status = active === id ? 'open' : 'close';
 
   return (
     <motion.div
@@ -83,7 +85,6 @@ function NavIcon({
       initial={false}
       animate={status}
       transition={{duration: 0.7, ease: animationEasing}}
-      onClick={() => setActive(index)}
       className='rounded-full overflow-hidden text-slate-100'
     >
       <div className='flex items-center justify-items-start px-3 py-2'>
