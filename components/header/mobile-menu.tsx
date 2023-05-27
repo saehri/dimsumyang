@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 
 const menuStyle = 'flex flex-col gap-2 h-xs:gap-4 h-s:gap-8 items-end xs:mb-8';
 
@@ -11,10 +11,12 @@ const imgAnimationVariant = {
     x: -200,
     opacity: 0,
     transition: {
-      duration: 0.05,
-      type: 'spring',
-      stiffness: 35,
-      ease: animationEasing,
+      rotate: {
+        delay: 1,
+        duration: 10,
+        repeat: 'infinity',
+        ease: 'linear',
+      },
     },
   },
   animate: {
@@ -24,7 +26,7 @@ const imgAnimationVariant = {
     opacity: 1,
     transition: {
       duration: 0.05,
-      delay: 0.3,
+      delay: 0.8,
       type: 'spring',
       stiffness: 35,
       ease: animationEasing,
@@ -43,22 +45,18 @@ const linkAnimationVariant = {
     x: 200,
     opacity: 0,
     transition: {
-      duration: 0.05,
       delay: index / 10,
       type: 'spring',
-      stiffness: 50,
-      ease: animationEasing,
+      bounce: 0.2,
     },
   }),
   animate: (index: number) => ({
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.05,
-      delay: index / 10,
+      delay: 0.3 + index * 0.05,
       type: 'spring',
-      stiffness: 50,
-      ease: animationEasing,
+      bounce: 0.2,
     },
   }),
 };
@@ -67,7 +65,7 @@ const menuAnimationVariant = {
   initial: {
     left: '100%',
     transition: {
-      delay: 0.5,
+      delay: 1,
     },
   },
   animate: {
@@ -79,22 +77,15 @@ export default function MobileMenu({state}: {state: boolean}) {
   const status = state ? 'animate' : 'initial';
 
   return (
-    <motion.div
-      style={{
-        background: `no-repeat top url('/assets/decoration/mobile top decoration yellow.png'),
-     no-repeat bottom url('/assets/decoration/mobile bottom decoration yellow.png')`,
-        backgroundSize: 'contain',
-        backgroundAttachment: 'fixed',
-        backgroundColor: 'rgb(250, 204, 21)',
-      }}
+    <m.div
       animate={status}
       initial={false}
       variants={menuAnimationVariant}
-      transition={{duration: 1, ease: animationEasing}}
-      className='pt-28 pr-8 pb-8 fixed z-30 top-0 left-0 h-screen w-full font-calistoga text-2xl text-slate-950 sm:hidden overflow-hidden max-sm:bg-btm-page-deco max-sm:bg-left-bottom max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-fixed bg-blend-darken'
+      transition={{duration: 0.3}}
+      className='fixed z-30 top-0 left-0 pt-28 pr-8 pb-8 h-screen w-screen font-calistoga text-2xl bg-yellow-400 text-slate-950 sm:hidden overflow-hidden'
     >
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
-        <motion.div variants={linkAnimationVariant} custom={1}>
+        <m.div variants={linkAnimationVariant} custom={1}>
           <Link href='/'>
             <span
               className='text-red-500 text-sm text-right block'
@@ -104,9 +95,9 @@ export default function MobileMenu({state}: {state: boolean}) {
             </span>
             <span>Franchise</span>
           </Link>
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={linkAnimationVariant} custom={2}>
+        <m.div variants={linkAnimationVariant} custom={2}>
           <Link href='/'>
             <span
               className='text-red-500 text-sm text-right block'
@@ -116,40 +107,40 @@ export default function MobileMenu({state}: {state: boolean}) {
             </span>
             <span>Reseller</span>
           </Link>
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={linkAnimationVariant} custom={3}>
+        <m.div variants={linkAnimationVariant} custom={3}>
           <Link href='/'>
             <span>Profile</span>
           </Link>
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={linkAnimationVariant} custom={4}>
+        <m.div variants={linkAnimationVariant} custom={4}>
           <Link href='/'>
             <span>Proposal Franchise</span>
           </Link>
-        </motion.div>
+        </m.div>
       </div>
 
       <div className={menuStyle}>
-        <motion.div variants={linkAnimationVariant} custom={5}>
+        <m.div variants={linkAnimationVariant} custom={5}>
           <span className='text-sm text-red-500 text-right'>Order Frozen</span>
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={linkAnimationVariant} custom={6}>
+        <m.div variants={linkAnimationVariant} custom={6}>
           <Link href='/'>
             <span>Tokopedia</span>
           </Link>
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={linkAnimationVariant} custom={7}>
+        <m.div variants={linkAnimationVariant} custom={7}>
           <Link href='/'>
             <span>Shopee</span>
           </Link>
-        </motion.div>
+        </m.div>
       </div>
 
-      <motion.div
+      <m.div
         aria-hidden='true'
         className='-translate-x-1/3 -translate-y-1/4'
         variants={imgAnimationVariant}
@@ -160,7 +151,7 @@ export default function MobileMenu({state}: {state: boolean}) {
           width={334}
           height={334}
         />
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }
