@@ -49,7 +49,7 @@ type NavLinkProps = {
 function NavLink({children, path, currentPath}: NavLinkProps) {
   return (
     <Link href={path}>
-      <motion.div>
+      <motion.div className='relative px-2'>
         <span className='relative z-50 text-slate-950'>{children}</span>
 
         {path === currentPath && (
