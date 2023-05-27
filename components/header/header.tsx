@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <LazyMotion features={domAnimation}>
       <div>
-        <div className='flex fixed w-full top-0 left-0 z-50 isolate max-sm:items-end max-sm:pt-10 max-sm:px-8'>
+        <div className='flex fixed w-full top-0 left-0 z-50 isolate max-sm:items-end max-sm:pt-10 max-sm:px-8 sm:backdrop-blur-sm'>
           <MobileBottomNavigation />
 
           <MobileMenuToggleButton
@@ -31,7 +31,8 @@ export default function Header() {
           <div className='w-[46px] h-[70px] sm:hidden absolute left-1/2 -translate-x-1/2'>
             <Image src='/assets/decoration/logo.png' alt='0' fill={true} />
           </div>
-          <div className='w-[46px] h-[70px] max-sm:hidden absolute left-1/2 -translate-x-1/2'>
+
+          <div className='w-[92px] h-[140px] top-4 max-sm:hidden absolute left-1/2 -translate-x-1/2'>
             <Image src='/assets/decoration/logo.png' alt='0' fill={true} />
           </div>
         </div>
