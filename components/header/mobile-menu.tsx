@@ -142,7 +142,7 @@ export default function MobileMenu({state}: {state: boolean}) {
 
       <m.div
         aria-hidden='true'
-        className='-translate-x-1/3 -translate-y-1/4'
+        className='-translate-x-1/3 -translate-y-1/4 relative z-50'
         variants={imgAnimationVariant}
       >
         <Image
@@ -152,6 +152,30 @@ export default function MobileMenu({state}: {state: boolean}) {
           height={334}
         />
       </m.div>
+
+      <div
+        className='absolute top-0 left-0 w-full aspect-[860/206]'
+        aria-hidden='true'
+      >
+        <Image
+          priority
+          src='/assets/decoration/mobile top decoration yellow.png'
+          fill={true}
+          alt=''
+        />
+      </div>
+
+      <div
+        className='absolute bottom-0 left-0 w-full aspect-[860/206]'
+        aria-hidden='true'
+      >
+        <Image
+          priority
+          src='/assets/decoration/mobile bottom decoration yellow.png'
+          fill={true}
+          alt=''
+        />
+      </div>
     </m.div>
   );
 }
