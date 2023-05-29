@@ -11,6 +11,7 @@ const imagesData = [
 
 export default function FadingSlider() {
   const [index, setIndex] = useState<number>(0);
+  const [indexJustChanged, setIndexJustChanged] = useState<boolean>(false);
 
   function changeIndex(): void {
     if (index + 1 !== imagesData.length)
@@ -19,19 +20,21 @@ export default function FadingSlider() {
   }
 
   function handleDrag(info: PanInfo) {
-    if (info.offset.x > 20) {
+    if (info.offset.x > 20)
       setIndex((prev) => (prev + 1 < imagesData.length ? prev + 1 : 0));
-    } else
-      setIndex((prev) => (prev - 1 >= 0 ? prev - 1 : imagesData.length - 1));
+    else setIndex((prev) => (prev - 1 >= 0 ? prev - 1 : imagesData.length - 1));
+
+    setIndexJustChanged(true);
   }
 
   useEffect(() => {
     const interval = setTimeout(() => {
-      changeIndex();
+      if (indexJustChanged === true) setIndexJustChanged(false);
+      else changeIndex();
     }, 5000);
 
     return () => clearTimeout(interval);
-  }, [index]);
+  }, [index, indexJustChanged]);
 
   return (
     <div>
