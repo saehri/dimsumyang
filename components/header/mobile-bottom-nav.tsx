@@ -22,7 +22,7 @@ export default function MobileBottomNavigation() {
   }, [pathname]);
 
   return (
-    <div className='fixed flex justify-between z-50 bottom-0 left-0 w-full py-2 px-8 bg-red-500 sm:hidden'>
+    <div className='fixed flex justify-between z-50 bottom-0 left-0 w-full py-2 px-8 bg-primary-orange sm:hidden'>
       <Link href='/' onClick={() => setActive('/')}>
         <NavIcon label='Home' active={active} id={'/'}>
           <HomeIcon />
@@ -75,7 +75,7 @@ function NavIcon({
       variants={{
         close: {
           width: '36px',
-          backgroundColor: 'rgb(239, 68, 68)',
+          backgroundColor: '#E54126',
         },
         open: {
           width: '100%',
@@ -85,7 +85,7 @@ function NavIcon({
       initial={false}
       animate={status}
       transition={{duration: 0.4, ease: animationEasing}}
-      className='rounded-full overflow-hidden text-slate-100'
+      className='rounded-full overflow-hidden text-primary-white'
     >
       <div className='flex items-center justify-items-start px-3 py-2'>
         <div aria-hidden='true'>{children}</div>

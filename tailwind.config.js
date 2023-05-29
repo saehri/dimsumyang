@@ -29,6 +29,11 @@ module.exports = {
         'primary-white': '#F8EFE8',
         'primary-orange': '#E54126',
       },
+      textColor: {
+        'primary-yellow': '#FFD235',
+        'primary-white': '#F8EFE8',
+        'primary-orange': '#E54126',
+      },
       color: {
         'primary-yellow': '#FFD235',
         'primary-white': '#F8EFE8',

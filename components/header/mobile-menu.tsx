@@ -86,13 +86,13 @@ export default function MobileMenu({state}: {state: boolean}) {
       animate={status}
       initial={false}
       variants={menuAnimationVariant}
-      className='fixed z-30 top-0 left-0 pt-28 pr-8 pb-8 h-screen w-screen font-calistoga text-2xl bg-yellow-400 text-slate-950 sm:hidden overflow-hidden'
+      className='fixed z-30 top-0 left-0 pt-28 pr-8 pb-8 h-screen w-screen font-calistoga text-2xl bg-primary-yellow text-slate-950 sm:hidden overflow-hidden'
     >
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
         <m.div variants={linkAnimationVariant} custom={1}>
           <Link href='/'>
             <span
-              className='text-red-500 text-sm text-right block'
+              className='text-primary-orange text-sm text-right block'
               aria-hidden='true'
             >
               Join
@@ -104,7 +104,7 @@ export default function MobileMenu({state}: {state: boolean}) {
         <m.div variants={linkAnimationVariant} custom={2}>
           <Link href='/'>
             <span
-              className='text-red-500 text-sm text-right block'
+              className='text-primary-orange text-sm text-right block'
               aria-hidden='true'
             >
               Join
@@ -128,7 +128,9 @@ export default function MobileMenu({state}: {state: boolean}) {
 
       <div className={menuStyle}>
         <m.div variants={linkAnimationVariant} custom={5}>
-          <span className='text-sm text-red-500 text-right'>Order Frozen</span>
+          <span className='text-sm text-primary-orange text-right'>
+            Order Frozen
+          </span>
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={6}>

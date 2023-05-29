@@ -55,7 +55,7 @@ function NavLink({children, path, currentPath}: NavLinkProps) {
         {path === currentPath && (
           <motion.div
             layoutId='desktopNavLink'
-            className='absolute inset-0 z-10 rounded-full bg-yellow-500'
+            className='absolute inset-0 z-10 rounded-full bg-primary-yellow'
             transition={{
               type: 'tween',
               duration: 0.7,

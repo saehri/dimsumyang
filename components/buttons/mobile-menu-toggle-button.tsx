@@ -44,6 +44,7 @@ const barBottomAnimationVariants = {
   },
 };
 
+const barStyle = 'w-full bg-primary-orange rounded-full';
 export default function MobileMenuToggleButton({
   state,
   setStatus,
@@ -59,16 +60,13 @@ export default function MobileMenuToggleButton({
     >
       <motion.div
         style={{height: '1.5px'}}
-        className='w-full bg-red-500 rounded-full'
+        className={barStyle}
         variants={barTopAnimationVariants}
       ></motion.div>
+      <motion.div style={{height: '1.5px'}} className={barStyle}></motion.div>
       <motion.div
         style={{height: '1.5px'}}
-        className='w-full bg-red-500 rounded-full'
-      ></motion.div>
-      <motion.div
-        style={{height: '1.5px'}}
-        className='w-full bg-red-500 rounded-full'
+        className={barStyle}
         variants={barBottomAnimationVariants}
       ></motion.div>
     </motion.button>
