@@ -24,6 +24,16 @@ module.exports = {
         'h-s': {raw: '(min-height: 690px)'},
         'max-sm': {max: '640px'},
       },
+      backgroundColor: {
+        'primary-yellow': '#FFD235',
+        'primary-white': '#F8EFE8',
+        'primary-orange': '#E54126',
+      },
+      color: {
+        'primary-yellow': '#FFD235',
+        'primary-white': '#F8EFE8',
+        'primary-orange': '#E54126',
+      },
     },
   },
   plugins: [],
