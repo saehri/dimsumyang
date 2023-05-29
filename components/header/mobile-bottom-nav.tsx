@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
-import {motion} from 'framer-motion';
+import {m} from 'framer-motion';
 import {usePathname} from 'next/navigation';
 
 import HomeIcon from '../icons/home-icon';
@@ -10,7 +10,7 @@ import MenuIcon from '../icons/menu-icon';
 import PrasmananIcon from '../icons/prasmanan-icon';
 import OrderIcon from '../icons/order-icon';
 
-const animationEasing = [0.32, 0.72, 0, 1];
+const animationEasing = [0.6, 0.28, 0.39, 0.9];
 
 export default function MobileBottomNavigation() {
   const [lastActive, setLastActive] = useState<string>('/');
@@ -18,7 +18,6 @@ export default function MobileBottomNavigation() {
   const pathname = usePathname();
 
   useEffect(() => {
-    setActive(pathname);
     setLastActive(pathname);
   }, [pathname]);
 
@@ -46,6 +45,7 @@ export default function MobileBottomNavigation() {
         onClick={() =>
           setActive((prev) => (prev === 'beli' ? lastActive : 'beli'))
         }
+        onBlur={() => setActive(lastActive)}
       >
         <NavIcon label='Mulai Order' active={active} id={'beli'}>
           <OrderIcon />
@@ -71,7 +71,7 @@ function NavIcon({
   const status = active === id ? 'open' : 'close';
 
   return (
-    <motion.div
+    <m.div
       variants={{
         close: {
           width: '36px',
@@ -84,20 +84,20 @@ function NavIcon({
       }}
       initial={false}
       animate={status}
-      transition={{duration: 0.7, ease: animationEasing}}
+      transition={{duration: 0.4, ease: animationEasing}}
       className='rounded-full overflow-hidden text-slate-100'
     >
       <div className='flex items-center justify-items-start px-3 py-2'>
         <div aria-hidden='true'>{children}</div>
 
-        <motion.div
+        <m.div
           initial={false}
           variants={{open: {opacity: 1}, close: {opacity: 0}}}
           className='font-outfit text-xs w-max shrink-0 ml-2'
         >
           {label}
-        </motion.div>
+        </m.div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

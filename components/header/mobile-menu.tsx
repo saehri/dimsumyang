@@ -45,7 +45,7 @@ const linkAnimationVariant = {
     x: 200,
     opacity: 0,
     transition: {
-      delay: index / 10,
+      delay: index * 0.05,
       type: 'spring',
       bounce: 0.2,
     },
@@ -54,9 +54,10 @@ const linkAnimationVariant = {
     x: 0,
     opacity: 1,
     transition: {
-      delay: 0.3 + index * 0.05,
+      delay: index * 0.05,
       type: 'spring',
       bounce: 0.2,
+      stiffness: 35,
     },
   }),
 };
@@ -65,11 +66,15 @@ const menuAnimationVariant = {
   initial: {
     left: '100%',
     transition: {
-      delay: 1,
+      duration: 0.3,
+      delay: 0.4,
     },
   },
   animate: {
     left: 0,
+    transition: {
+      duration: 0.3,
+    },
   },
 };
 
@@ -81,7 +86,6 @@ export default function MobileMenu({state}: {state: boolean}) {
       animate={status}
       initial={false}
       variants={menuAnimationVariant}
-      transition={{duration: 0.3}}
       className='fixed z-30 top-0 left-0 pt-28 pr-8 pb-8 h-screen w-screen font-calistoga text-2xl bg-yellow-400 text-slate-950 sm:hidden overflow-hidden'
     >
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
