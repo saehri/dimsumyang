@@ -19,7 +19,10 @@ export const metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang='en'>
-      <body className={`${outfit.variable} ${calistoga.variable}`}>
+      <body
+        className={`${outfit.variable} ${calistoga.variable}`}
+        style={{WebkitTapHighlightColor: 'transparent'}}
+      >
         <Header />
         {children}
       </body>
