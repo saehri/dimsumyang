@@ -56,7 +56,7 @@ export default function MobileMenuToggleButton({
       animate={status}
       initial={status}
       onClick={() => setStatus((prev) => !prev)}
-      className='w-6 h-6 bg-transparent outline-transparent focus:outline-transparent ml-auto mb-4 relative z-50 flex flex-col justify-between sm:hidden'
+      className='w-6 h-6 bg-transparent outline-transparent focus:outline-transparent ml-auto mb-4 relative z-50 flex flex-col justify-between md:hidden'
     >
       <motion.div
         style={{height: '1.5px'}}

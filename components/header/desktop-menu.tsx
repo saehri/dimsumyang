@@ -8,7 +8,7 @@ export default function DesktopMenu() {
   const pathname = usePathname();
 
   return (
-    <nav className='max-sm:hidden font-calistoga py-8 flex gap-4 justify-between w-full max-w-[867px] mx-auto px-8 lg:px-0'>
+    <nav className='hidden md:flex font-calistoga py-8 gap-4 justify-between w-full max-w-[867px] mx-auto px-8 lg:px-0'>
       <div className={menuStyle}>
         <NavLink path='/' currentPath={pathname}>
           Home
