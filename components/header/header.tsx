@@ -27,6 +27,10 @@ export default function Header() {
 
           <MobileMenu state={mobileHeaderVisible} />
           <DesktopMenu />
+
+          <div className='lg:w-[92px] lg:h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'>
+            <Image src='/assets/decoration/logo.png' alt='' fill={true} />
+          </div>
         </div>
       </div>
     </LazyMotion>

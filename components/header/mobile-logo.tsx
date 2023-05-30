@@ -5,7 +5,7 @@ import {useEffect} from 'react';
 import {m, useMotionValue, useScroll} from 'framer-motion';
 
 const logoStyle =
-  'w-[46px] h-[70px] lg:w-[92px] lg:h-[140px] lg:top-4 lg:hidden fixed top-2 left-1/2 -translate-x-1/2';
+  'w-[46px] h-[70px] lg:top-4 lg:hidden fixed top-2 left-1/2 -translate-x-1/2';
 export default function MobileLogo() {
   const logoYellowOpacity = useMotionValue(0);
   const logoWhiteOpacity = useMotionValue(1);
