@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <LazyMotion features={domAnimation}>
       <div>
-        <div className='flex fixed w-full top-0 left-0 z-50 isolate items-end pt-10 px-8 md:backdrop-blur-sm'>
+        <div className='flex fixed w-full top-0 left-0 z-50 isolate items-end pt-10 px-8 lg:backdrop-blur-sm'>
           <MobileBottomNavigation />
 
           <MobileMenuToggleButton

@@ -22,7 +22,7 @@ export default function MobileBottomNavigation() {
   }, [pathname]);
 
   return (
-    <div className='fixed flex justify-between z-50 bottom-0 left-0 w-full py-2 px-8 bg-primary-orange md:hidden'>
+    <div className='fixed flex justify-between z-50 bottom-0 left-0 w-full py-2 px-8 bg-primary-orange lg:hidden'>
       <Link href='/' onClick={() => setActive('/')}>
         <NavIcon label='Home' active={active} id={'/'}>
           <HomeIcon />

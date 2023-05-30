@@ -86,7 +86,7 @@ export default function MobileMenu({state}: {state: boolean}) {
       animate={status}
       initial={false}
       variants={menuAnimationVariant}
-      className='fixed z-30 top-0 left-0 pt-28 pr-8 pb-8 h-screen w-screen font-calistoga text-2xl bg-primary-yellow text-slate-950 md:hidden overflow-hidden'
+      className='fixed z-30 top-0 left-0 pt-28 pr-8 pb-8 h-screen w-screen font-calistoga text-2xl bg-primary-yellow text-slate-950 lg:hidden overflow-hidden'
     >
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
         <m.div variants={linkAnimationVariant} custom={1}>
