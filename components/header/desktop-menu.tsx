@@ -1,14 +1,24 @@
+import {useEffect} from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {usePathname} from 'next/navigation';
-import {motion} from 'framer-motion';
+import {motion, useScroll, useTransform} from 'framer-motion';
 
 const menuStyle = 'flex gap-8 md:gap-10 lg:gap-12';
 
 export default function DesktopMenu() {
   const pathname = usePathname();
 
+  const {scrollY} = useScroll();
+  const height = useTransform(scrollY, [0, 150], [120, 70]);
+  const logoScale = useTransform(scrollY, [0, 150], [1, 0.4]);
+  const logoY = useTransform(scrollY, [0, 150], [0, -50]);
+
   return (
-    <nav className='hidden lg:flex font-calistoga py-8 gap-4 justify-between w-full max-w-[867px] mx-auto px-8 lg:px-0'>
+    <motion.nav
+      style={{height}}
+      className='hidden relative lg:flex font-calistoga gap-4 justify-between items-center h-32  w-full max-w-[867px] mx-auto px-8 lg:px-0'
+    >
       <div className={menuStyle}>
         <NavLink path='/' currentPath={pathname}>
           Home
@@ -36,7 +46,14 @@ export default function DesktopMenu() {
           Profile
         </NavLink>
       </div>
-    </nav>
+
+      <motion.div
+        style={{scale: logoScale, x: '-50%', y: logoY}}
+        className='w-[92px] h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'
+      >
+        <Image src='/assets/decoration/logo.png' alt='' fill={true} />
+      </motion.div>
+    </motion.nav>
   );
 }
 

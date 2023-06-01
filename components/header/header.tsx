@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {useState} from 'react';
-import Image from 'next/image';
 import {LazyMotion, domAnimation} from 'framer-motion';
 
 import MobileMenu from './mobile-menu';
@@ -17,7 +16,7 @@ export default function Header() {
   return (
     <LazyMotion features={domAnimation}>
       <div>
-        <div className='flex fixed w-full top-0 left-0 z-50 isolate items-end pt-10 px-8 lg:backdrop-blur-sm'>
+        <div className='flex fixed w-full top-0 left-0 z-50 isolate items-end pt-10 px-8 lg:pt-0 lg:items-center lg:backdrop-blur-md'>
           <MobileBottomNavigation />
 
           <MobileMenuToggleButton
@@ -27,10 +26,6 @@ export default function Header() {
 
           <MobileMenu state={mobileHeaderVisible} />
           <DesktopMenu />
-
-          <div className='lg:w-[92px] lg:h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'>
-            <Image src='/assets/decoration/logo.png' alt='' fill={true} />
-          </div>
         </div>
       </div>
     </LazyMotion>
