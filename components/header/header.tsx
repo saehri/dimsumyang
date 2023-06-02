@@ -9,10 +9,12 @@ import MobileMenuToggleButton from '../buttons/mobile-menu-toggle-button';
 import MobileBottomNavigation from './mobile-bottom-nav';
 import MobileLogo from './mobile-logo';
 import DesktopMenu from './desktop-menu';
+import {usePathname} from 'next/navigation';
 
 export default function Header() {
   const [mobileHeaderVisible, setMobileHeaderVisible] =
     useState<boolean>(false);
+  const pathname = usePathname();
 
   return (
     <LazyMotion features={domAnimation}>
@@ -28,7 +30,7 @@ export default function Header() {
           <MobileMenu state={mobileHeaderVisible} />
           <DesktopMenu />
 
-          <MobileLogo />
+          {pathname === '/' && <MobileLogo />}
         </div>
       </div>
     </LazyMotion>
