@@ -7,6 +7,7 @@ import {LazyMotion, domAnimation} from 'framer-motion';
 import MobileMenu from './mobile-menu';
 import MobileMenuToggleButton from '../buttons/mobile-menu-toggle-button';
 import MobileBottomNavigation from './mobile-bottom-nav';
+import MobileLogo from './mobile-logo';
 import DesktopMenu from './desktop-menu';
 
 export default function Header() {
@@ -26,6 +27,8 @@ export default function Header() {
 
           <MobileMenu state={mobileHeaderVisible} />
           <DesktopMenu />
+
+          <MobileLogo />
         </div>
       </div>
     </LazyMotion>
