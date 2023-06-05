@@ -3,10 +3,14 @@ import {Outfit, Calistoga} from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header/header';
 
-const outfit = Outfit({preload: false, weight: ['400'], variable: '--outfit'});
-const calistoga = Calistoga({
-  preload: false,
+const outfit = Outfit({
   weight: ['400'],
+  subsets: ['latin'],
+  variable: '--outfit',
+});
+export const calistoga = Calistoga({
+  weight: ['400'],
+  subsets: ['latin'],
   variable: '--calistoga',
 });
 
@@ -20,8 +24,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang='en'>
       <body
-        className={`${outfit.variable} ${calistoga.variable}`}
         style={{WebkitTapHighlightColor: 'transparent'}}
+        className={`${calistoga.variable} ${outfit.variable}`}
       >
         <Header />
         {children}
