@@ -18,21 +18,23 @@ export default function Header() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div>
-        <div className='flex fixed w-full top-0 left-0 z-50 isolate items-end pt-10 px-5 lg:pt-0 lg:items-center lg:backdrop-blur-md'>
-          <MobileBottomNavigation />
+      {!pathname.includes('admin') && !pathname.includes('auth') && (
+        <div>
+          <div className='flex fixed w-full top-0 left-0 z-50 isolate items-end pt-10 px-5 lg:pt-0 lg:items-center lg:backdrop-blur-md'>
+            <MobileBottomNavigation />
 
-          <MobileMenuToggleButton
-            state={mobileHeaderVisible}
-            setStatus={setMobileHeaderVisible}
-          />
+            <MobileMenuToggleButton
+              state={mobileHeaderVisible}
+              setStatus={setMobileHeaderVisible}
+            />
 
-          <MobileMenu state={mobileHeaderVisible} />
-          <DesktopMenu />
+            <MobileMenu state={mobileHeaderVisible} />
+            <DesktopMenu />
 
-          {pathname === '/' && <MobileLogo />}
+            {pathname === '/' && <MobileLogo />}
+          </div>
         </div>
-      </div>
+      )}
     </LazyMotion>
   );
 }
