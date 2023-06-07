@@ -42,7 +42,7 @@ const testimonial = [
 export default function TestiSlider() {
   return (
     <div className='flex-1 overflow-hidden overflow-y-auto relative'>
-      <div className='flex flex-col gap-3 absolute inset-0'>
+      <div className='flex flex-col gap-3 lg:absolute inset-0 max-sm:h-72 overflow-y-auto pb-2'>
         {testimonial.map((person, i) => (
           <TestiCard key={`testi-card-${i}`} person={person} />
         ))}

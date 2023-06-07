@@ -6,11 +6,7 @@ import {Autoplay} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 
-const images = [
-  'https://images.unsplash.com/photo-1685640205918-66d30caf640d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60',
-  'https://images.unsplash.com/photo-1685168641013-9d7c1473d31f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60',
-  'https://images.unsplash.com/photo-1685472065771-f57d15b4c585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
-];
+const images: string[] | [] = [];
 
 export default function InstagramContentSlider() {
   return (
@@ -40,7 +36,7 @@ export default function InstagramContentSlider() {
               key={`istg-sldr-${i}`}
               className='bg-primary-yellow relative'
             >
-              <img src={img} />
+              <img src={img} className='w-full h-full object-cover' />
             </SwiperSlide>
           ))
         ) : (
