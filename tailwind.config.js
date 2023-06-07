@@ -39,6 +39,11 @@ module.exports = {
         'primary-white': '#F8EFE8',
         'primary-orange': '#E54126',
       },
+      gridColumn: {
+        'span-1/6': '1/6',
+        'span-6/-1': '6/-1',
+        'span-3/11': '3/11',
+      },
     },
   },
   plugins: [],
