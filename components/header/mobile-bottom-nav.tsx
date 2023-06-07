@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {useEffect, useState} from 'react';
+import {SetStateAction, useEffect, useState} from 'react';
 import {m} from 'framer-motion';
 import {usePathname} from 'next/navigation';
 
@@ -12,7 +12,11 @@ import OrderIcon from '../icons/order-icon';
 
 const animationEasing = [0.6, 0.28, 0.39, 0.9];
 
-export default function MobileBottomNavigation() {
+export default function MobileBottomNavigation({
+  mobileSecondaryNavStatus,
+}: {
+  mobileSecondaryNavStatus: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [lastActive, setLastActive] = useState<string>('/');
   const [active, setActive] = useState<string | null>('/');
   const pathname = usePathname();
@@ -23,28 +27,47 @@ export default function MobileBottomNavigation() {
 
   return (
     <div className='fixed flex justify-between z-50 bottom-0 left-0 w-full py-2 px-8 bg-primary-orange lg:hidden'>
-      <Link href='/' onClick={() => setActive('/')}>
+      <Link
+        href='/'
+        onClick={() => {
+          setActive('/');
+          mobileSecondaryNavStatus(false);
+        }}
+      >
         <NavIcon label='Home' active={active} id={'/'}>
           <HomeIcon />
         </NavIcon>
       </Link>
 
-      <Link href='/menu' onClick={() => setActive('/menu')}>
+      <Link
+        href='/menu'
+        onClick={() => {
+          setActive('/menu');
+          mobileSecondaryNavStatus(false);
+        }}
+      >
         <NavIcon label='Menu' active={active} id={'/menu'}>
           <MenuIcon />
         </NavIcon>
       </Link>
 
-      <Link href='/prasmanan' onClick={() => setActive('/prasmanan')}>
+      <Link
+        href='/prasmanan'
+        onClick={() => {
+          setActive('/prasmanan');
+          mobileSecondaryNavStatus(false);
+        }}
+      >
         <NavIcon label='Prasmanan' active={active} id={'/prasmanan'}>
           <PrasmananIcon />
         </NavIcon>
       </Link>
 
       <button
-        onClick={() =>
-          setActive((prev) => (prev === 'beli' ? lastActive : 'beli'))
-        }
+        onClick={() => {
+          setActive((prev) => (prev === 'beli' ? lastActive : 'beli'));
+          mobileSecondaryNavStatus(false);
+        }}
         onBlur={() => setActive(lastActive)}
       >
         <NavIcon label='Mulai Order' active={active} id={'beli'}>

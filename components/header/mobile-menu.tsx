@@ -78,7 +78,13 @@ const menuAnimationVariant = {
   },
 };
 
-export default function MobileMenu({state}: {state: boolean}) {
+export default function MobileMenu({
+  state,
+  setStatus,
+}: {
+  state: boolean;
+  setStatus: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const status = state ? 'animate' : 'initial';
 
   return (
@@ -90,7 +96,7 @@ export default function MobileMenu({state}: {state: boolean}) {
     >
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
         <m.div variants={linkAnimationVariant} custom={1}>
-          <Link href='/'>
+          <Link href='/' onClick={() => setStatus(false)}>
             <span
               className='text-primary-orange text-sm text-right block'
               aria-hidden='true'
@@ -102,7 +108,7 @@ export default function MobileMenu({state}: {state: boolean}) {
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={2}>
-          <Link href='/'>
+          <Link href='/' onClick={() => setStatus(false)}>
             <span
               className='text-primary-orange text-sm text-right block'
               aria-hidden='true'
@@ -114,13 +120,13 @@ export default function MobileMenu({state}: {state: boolean}) {
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={3}>
-          <Link href='/'>
+          <Link href='/' onClick={() => setStatus(false)}>
             <span>Profile</span>
           </Link>
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={4}>
-          <Link href='/'>
+          <Link href='/' onClick={() => setStatus(false)}>
             <span>Proposal Franchise</span>
           </Link>
         </m.div>
@@ -134,13 +140,13 @@ export default function MobileMenu({state}: {state: boolean}) {
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={6}>
-          <Link href='/'>
+          <Link href='/' onClick={() => setStatus(false)}>
             <span>Tokopedia</span>
           </Link>
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={7}>
-          <Link href='/'>
+          <Link href='/' onClick={() => setStatus(false)}>
             <span>Shopee</span>
           </Link>
         </m.div>
