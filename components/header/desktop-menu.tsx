@@ -16,8 +16,8 @@ export default function DesktopMenu() {
 
   return (
     <motion.nav
-      style={{height}}
-      className='hidden relative lg:flex font-calistoga gap-4 justify-between items-center h-32  w-full max-w-[867px] mx-auto px-8 lg:px-0'
+      style={{height, gridColumn: '5/21'}}
+      className='hidden relative lg:flex font-calistoga gap-4 justify-between items-center h-32  w-full mx-auto px-8 lg:px-0'
     >
       <div className={menuStyle}>
         <NavLink path='/' currentPath={pathname}>
@@ -65,9 +65,9 @@ type NavLinkProps = {
 
 function NavLink({children, path, currentPath}: NavLinkProps) {
   return (
-    <Link href={path}>
+    <Link href={path} prefetch>
       <motion.div className='relative px-2'>
-        <span className='relative z-50 text-slate-950'>{children}</span>
+        <span className='relative z-50 text-slate-950 text-xl'>{children}</span>
 
         {path === currentPath && (
           <motion.div
