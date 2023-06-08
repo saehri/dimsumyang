@@ -40,10 +40,18 @@ module.exports = {
         'primary-orange': '#E54126',
       },
       gridColumn: {
+        'span-1/3': '1/3',
+        'span-3/-1': '3/-1',
+        'span-1/4': '1/4',
+        'span-1/5': '1/5',
         'span-1/6': '1/6',
+        'span-1/8': '1/8',
         'span-6/-1': '6/-1',
-        'span-3/11': '3/11',
+        'span-4/22': '4/22',
       },
+      borderColor: {
+        'primary-white': '#F8EFE8'
+      }
     },
   },
   plugins: [],

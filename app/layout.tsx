@@ -1,7 +1,10 @@
+'use client';
+
 import {Outfit, Calistoga} from 'next/font/google';
 
 import './globals.css';
 import Header from '@/components/header/header';
+import {LazyMotion, domMax} from 'framer-motion';
 
 const outfit = Outfit({
   weight: ['400'],
@@ -27,8 +30,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         style={{WebkitTapHighlightColor: 'transparent'}}
         className={`${calistoga.variable} ${outfit.variable}`}
       >
-        <Header />
-        {children}
+        <LazyMotion features={domMax}>
+          <Header />
+          {children}
+        </LazyMotion>
       </body>
     </html>
   );
