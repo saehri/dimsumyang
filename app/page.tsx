@@ -4,17 +4,19 @@ import Image from 'next/image';
 import FadingSlider from '@/components/sliders/fading-slider';
 import InstagramSlider from '@/components/sliders/instagram-slider';
 import TestiSlider from '@/components/sliders/testi-slider';
-import Link from 'next/link';
 import {m} from 'framer-motion';
+import {LazyMotion, domMax} from 'framer-motion';
 
 export default function Home() {
   return (
-    <main className='bg-primary-white min-h-screen bg-deco-bottom lg:bg-none bg-contain bg-no-repeat bg-bottom'>
-      <HeroSection />
-      <HeroImageDecoration />
-      <InstagramAndTestimonial />
-      <Footer />
-    </main>
+    <LazyMotion features={domMax}>
+      <main className='bg-primary-white min-h-screen bg-deco-bottom lg:bg-none bg-contain bg-no-repeat bg-bottom'>
+        <HeroSection />
+        <HeroImageDecoration />
+        <InstagramAndTestimonial />
+        <Footer />
+      </main>
+    </LazyMotion>
   );
 }
 
