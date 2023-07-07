@@ -63,7 +63,7 @@ export default function TestiSlider() {
         variants={containerAnimationVrt}
         initial='hidden'
         whileInView='show'
-        className='flex flex-col gap-3 lg:absolute inset-0 max-sm:h-72 overflow-y-auto pb-2'
+        className='flex flex-col gap-3 lg:absolute inset-0 max-sm:h-72 overflow-y-auto pb-2 custom-scrollbar'
       >
         {testimonial.map((person, i) => (
           <TestiCard key={`testi-card-${i}`} person={person} />
@@ -92,7 +92,7 @@ function TestiCard({person}: {person: Testi}) {
         <span className='font-calistoga text-sm md:text-xl'>
           {person.username}
         </span>
-        <span className='font-outfit text-xs md:text-sm text-slate-800 leading-4'>
+        <span className='font-outfit text-xs md:text-sm lg:text-base leading-4 lg:leading-[1.2] text-slate-800'>
           {person.testimonial}
         </span>
       </figcaption>
