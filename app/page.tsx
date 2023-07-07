@@ -4,75 +4,17 @@ import Image from 'next/image';
 import FadingSlider from '@/components/sliders/fading-slider';
 import InstagramSlider from '@/components/sliders/instagram-slider';
 import TestiSlider from '@/components/sliders/testi-slider';
-import {m} from 'framer-motion';
-import {LazyMotion, domMax} from 'framer-motion';
+import CommonLayout from '@/components/Layout/common-layout';
 
 export default function Home() {
   return (
-    <LazyMotion features={domMax}>
-      <main className='bg-primary-white min-h-screen bg-deco-bottom lg:bg-none bg-contain bg-no-repeat bg-bottom'>
+    <CommonLayout>
+      <main className='bg-primary-white min-h-screen bg-deco-bottom lg:bg-none bg-contain bg-no-repeat bg-bottom pb-24'>
         <HeroSection />
         <HeroImageDecoration />
         <InstagramAndTestimonial />
-        <Footer />
       </main>
-    </LazyMotion>
-  );
-}
-
-/* 
-  FOOTER
-*/
-function Footer() {
-  return (
-    <footer className='hidden lg:grid grid-cols-[repeat(24,1fr)] mt-24 bg-primary-orange pt-8 pb-16'>
-      <div className='col-span-4/22 grid grid-cols-[repeat(12,1fr)]'>
-        <div className='col-span-1/3'>
-          <div className='pt-[100%] relative'>
-            <div className='absolute inset-0'>
-              <Image
-                src='/assets/decoration/footer%20image%20left.png'
-                fill={true}
-                alt=''
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className='col-span-3/-1 grid grid-cols-[repeat(12,1fr)] pl-8 grid-rows-4 gap-y-4'>
-          <div className='col-span-1/5 relative pt-[calc((49/264)*100%)]'>
-            <div className='absolute inset-0 bg-pink-50-300'>
-              <Image
-                src='/assets/decoration/footer%20image%20top.png'
-                fill={true}
-                alt=''
-              />
-            </div>
-          </div>
-
-          <div className='col-span-1/8 bg-lime-300 flex items-center gap-4 font-calistoga text-xl'>
-            <span>Hubungi Kami:</span>
-
-            <m.a
-              href=''
-              className='block py-2 px-4 rounded-full bg-primary-orange border text-primary-white border-primary-white'
-              whileHover={{
-                backgroundColor: 'rgb(248, 239, 232)',
-                color: 'rgb(229, 65, 38)',
-              }}
-            >
-              085720930973
-            </m.a>
-          </div>
-
-          <div className='col-span-full bg-primary-white h-[1.5px] w-full self-center'></div>
-
-          <div className='col-span-full bg-lime-300'>
-            This is the second image
-          </div>
-        </div>
-      </div>
-    </footer>
+    </CommonLayout>
   );
 }
 

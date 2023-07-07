@@ -20,29 +20,29 @@ export default function DesktopMenu() {
       className='hidden relative lg:flex font-calistoga gap-4 justify-between items-center h-32  w-full mx-auto px-8 lg:px-0'
     >
       <div className={menuStyle}>
-        <NavLink path='/' currentPath={pathname}>
+        <NavLink path='/' currentPath={pathname} index={1}>
           Home
         </NavLink>
 
-        <NavLink path='/menu' currentPath={pathname}>
+        <NavLink path='/menu' currentPath={pathname} index={2}>
           Menu
         </NavLink>
 
-        <NavLink path='/prasmanan' currentPath={pathname}>
+        <NavLink path='/prasmanan' currentPath={pathname} index={3}>
           Prasmanan
         </NavLink>
       </div>
 
       <div className={menuStyle}>
-        <NavLink path='/franchise' currentPath={pathname}>
+        <NavLink path='/franchise' currentPath={pathname} index={4}>
           Franchise
         </NavLink>
 
-        <NavLink path='/reseller' currentPath={pathname}>
+        <NavLink path='/reseller' currentPath={pathname} index={5}>
           Reseller
         </NavLink>
 
-        <NavLink path='/profile' currentPath={pathname}>
+        <NavLink path='/profile' currentPath={pathname} index={6}>
           Profile
         </NavLink>
       </div>
@@ -61,12 +61,18 @@ type NavLinkProps = {
   children: React.ReactNode;
   path: string;
   currentPath: string;
+  index: number;
 };
 
-function NavLink({children, path, currentPath}: NavLinkProps) {
+function NavLink({children, path, currentPath, index}: NavLinkProps) {
   return (
     <Link href={path} prefetch>
-      <motion.div className='relative px-2'>
+      <motion.div
+        className='relative px-2'
+        initial={{y: -100, opacity: 0}}
+        animate={{y: 0, opacity: 1}}
+        transition={{delay: 1 + index * 0.1}}
+      >
         <span className='relative z-50 text-slate-950 text-xl'>{children}</span>
 
         {path === currentPath && (

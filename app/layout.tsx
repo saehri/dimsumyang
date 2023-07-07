@@ -1,14 +1,18 @@
 import {Outfit, Calistoga} from 'next/font/google';
 
 import './globals.css';
+import {Suspense} from 'react';
+
 import Header from '@/components/header/header';
+import NavigationEvent from '@/components/loaders/nav-events';
+import PageLoader from '@/components/loaders/loader';
 
 const outfit = Outfit({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--outfit',
 });
-export const calistoga = Calistoga({
+const calistoga = Calistoga({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--calistoga',
@@ -29,6 +33,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       >
         <Header />
         {children}
+
+        <Suspense fallback={<PageLoader />}>
+          <NavigationEvent />
+        </Suspense>
       </body>
     </html>
   );

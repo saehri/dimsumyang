@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {SetStateAction, useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {m} from 'framer-motion';
 import {usePathname} from 'next/navigation';
 
@@ -102,7 +102,7 @@ function NavIcon({
         },
         open: {
           width: '100%',
-          backgroundColor: 'rgb(220, 38, 38)',
+          backgroundColor: 'rgba(0, 0, 0, .2)',
         },
       }}
       initial={false}
