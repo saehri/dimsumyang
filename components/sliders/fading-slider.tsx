@@ -43,7 +43,14 @@ export default function FadingSlider() {
   }, [index, indexJustChanged]);
 
   return (
-    <div>
+    <motion.div
+      initial={{y: -150, opacity: 0}}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: {delay: 0.3, type: 'spring'},
+      }}
+    >
       <div className='relative flex gap-4 pt-[calc((1/1)*100%)] lg:pt-0 lg:w-[512px] lg:h-[512px] lg:mx-auto'>
         {imagesData.map((img) => (
           <SliderContent
@@ -102,7 +109,7 @@ export default function FadingSlider() {
           <ChevronRight />
         </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

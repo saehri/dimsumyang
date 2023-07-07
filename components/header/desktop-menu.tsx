@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {usePathname} from 'next/navigation';
@@ -48,6 +47,8 @@ export default function DesktopMenu() {
       </div>
 
       <motion.div
+        initial={{opacity: 0, scale: 0.5}}
+        animate={{opacity: 1, scale: 1, transition: {delay: 0.8}}}
         style={{scale: logoScale, x: '-50%', y: logoY}}
         className='w-[92px] h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'
       >
@@ -71,14 +72,14 @@ function NavLink({children, path, currentPath, index}: NavLinkProps) {
         className='relative px-2'
         initial={{y: -100, opacity: 0}}
         animate={{y: 0, opacity: 1}}
-        transition={{delay: 1 + index * 0.1}}
+        transition={{delay: 0.2 + index * 0.1}}
       >
         <span className='relative z-50 text-slate-950 text-xl'>{children}</span>
 
         {path === currentPath && (
           <motion.div
             layoutId='desktopNavLink'
-            className='absolute inset-0 z-10 rounded-full bg-primary-yellow'
+            className='absolute inset-0 z-10 rounded-full bg-primary-yellow shadow-md outline outline-1 -outline-offset-1 outline-slate-100/20'
             transition={{
               type: 'tween',
               duration: 0.7,

@@ -128,7 +128,9 @@ export default function Footer() {
                   initial={{opacity: 0.8}}
                   whileHover={{opacity: 1}}
                   transition={{duration: 0.1}}
-                  href=''
+                  href='https://www.tokopedia.com/dimsumyang1000?utm_campaign=Shop-19332965-12146490-250722&utm_source=salinlink&utm_medium=share&_branch_match_id=1091541649935691728&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8nPzi9ITclM1MvJzMvWDyr38zYITMsIL0oCAA4J2qQiAAAA'
+                  target='_blank'
+                  title='Pesan Dimsum Yang frozen di Tokopedia'
                   className='text-primary-white grid'
                 >
                   <div className='relative pt-[calc((25/74)*100%)] self-center'>
@@ -146,7 +148,9 @@ export default function Footer() {
                   initial={{opacity: 0.8}}
                   whileHover={{opacity: 1}}
                   transition={{duration: 0.1}}
-                  href=''
+                  href='https://shopee.co.id/shope.me'
+                  target='_blank'
+                  title='Pesan Dimsum Yang frozen di Shopee'
                   className='text-primary-white grid'
                 >
                   <div className='relative pt-[calc((25/73)*100%)] self-center'>
@@ -171,7 +175,7 @@ export default function Footer() {
                   initial={{opacity: 0.8}}
                   whileHover={{opacity: 1}}
                   transition={{duration: 0.1}}
-                  href=''
+                  href='mailto:dimsumyang1000@gmail.com'
                   className='text-primary-white grid'
                 >
                   <EmailIcon />
@@ -179,7 +183,8 @@ export default function Footer() {
                 </m.a>
 
                 <m.a
-                  href=''
+                  href='https://www.instagram.com/dimsumyang.id/'
+                  target='_blank'
                   initial={{opacity: 0.8}}
                   whileHover={{opacity: 1}}
                   transition={{duration: 0.1}}
@@ -190,7 +195,8 @@ export default function Footer() {
                 </m.a>
 
                 <m.a
-                  href=''
+                  href='https://www.tiktok.com/@dimsumyang.id?_t=8YNZGwVGMOg&_r=1'
+                  target='_blank'
                   initial={{opacity: 0.8}}
                   whileHover={{opacity: 1}}
                   transition={{duration: 0.1}}
@@ -201,7 +207,8 @@ export default function Footer() {
                 </m.a>
 
                 <m.a
-                  href=''
+                  href='https://www.facebook.com/dimsumyang.id/'
+                  target='_blank'
                   initial={{opacity: 0.8}}
                   whileHover={{opacity: 1}}
                   transition={{duration: 0.1}}

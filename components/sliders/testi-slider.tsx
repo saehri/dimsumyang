@@ -1,4 +1,5 @@
-import TestiCard from '../cards/testi-card';
+'use client';
+import {m} from 'framer-motion';
 
 const testimonial = [
   {
@@ -39,14 +40,62 @@ const testimonial = [
   },
 ];
 
+const containerAnimationVrt = {
+  hidden: {opacity: 0},
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const animationEasing = [0.32, 0.72, 0, 1];
+const cardAnimVrt = {
+  hidden: {y: 50, opacity: 0},
+  show: {y: 0, opacity: 1, type: 'spring', damping: 300},
+};
+
 export default function TestiSlider() {
   return (
     <div className='flex-1 overflow-hidden overflow-y-auto relative'>
-      <div className='flex flex-col gap-3 lg:absolute inset-0 max-sm:h-72 overflow-y-auto pb-2'>
+      <m.div
+        variants={containerAnimationVrt}
+        initial='hidden'
+        whileInView='show'
+        className='flex flex-col gap-3 lg:absolute inset-0 max-sm:h-72 overflow-y-auto pb-2'
+      >
         {testimonial.map((person, i) => (
           <TestiCard key={`testi-card-${i}`} person={person} />
         ))}
-      </div>
+      </m.div>
     </div>
+  );
+}
+
+// TESTI CARD
+type Testi = {
+  username: string;
+  image: string;
+  testimonial: string;
+};
+
+function TestiCard({person}: {person: Testi}) {
+  return (
+    <m.figure
+      variants={cardAnimVrt}
+      className='flex gap-4 items-center bg-white shadow-md p-2 rounded-2xl'
+    >
+      <div className='w-[60px] h-[60px] shrink-0 rounded-full bg-slate-200'></div>
+
+      <figcaption className='flex flex-col gap-1 lg:gap-2'>
+        <span className='font-calistoga text-sm md:text-xl'>
+          {person.username}
+        </span>
+        <span className='font-outfit text-xs md:text-sm text-slate-800 leading-4'>
+          {person.testimonial}
+        </span>
+      </figcaption>
+    </m.figure>
   );
 }
