@@ -50,8 +50,8 @@ module.exports = {
         'span-4/22': '4/22',
       },
       borderColor: {
-        'primary-white': '#F8EFE8'
-      }
+        'primary-white': '#F8EFE8',
+      },
     },
   },
   plugins: [],
