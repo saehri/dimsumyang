@@ -35,7 +35,7 @@ export default function Header() {
 
             <DesktopMenu />
 
-            {pathname === '/' && <MobileLogo />}
+            <MobileLogo />
           </div>
         </div>
       )}
