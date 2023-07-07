@@ -3,7 +3,7 @@ import Image from 'next/image';
 import {usePathname} from 'next/navigation';
 import {motion, useScroll, useTransform} from 'framer-motion';
 
-const menuStyle = 'flex gap-8 md:gap-10 lg:gap-12';
+const menuStyle = 'flex gap-8 lg:gap-12 bg-purpe-400';
 
 export default function DesktopMenu() {
   const pathname = usePathname();
@@ -15,10 +15,10 @@ export default function DesktopMenu() {
 
   return (
     <motion.nav
-      style={{height, gridColumn: '5/21'}}
-      className='hidden relative lg:flex font-calistoga gap-4 justify-between items-center h-32  w-full mx-auto px-8 lg:px-0'
+      style={{height}}
+      className='hidden relative lg:grid grid-cols-[repeat(2,max(370px,40%))] font-calistoga gap-4 justify-between items-center h-32 lg:col-span-3/23 xl:col-span-5/21 w-full mx-auto px-8 lg:px-0'
     >
-      <div className={menuStyle}>
+      <div className={menuStyle + ' justify-end xl:justify-start'}>
         <NavLink path='/' currentPath={pathname} index={1}>
           Home
         </NavLink>
@@ -32,7 +32,7 @@ export default function DesktopMenu() {
         </NavLink>
       </div>
 
-      <div className={menuStyle}>
+      <div className={menuStyle + ' xl:justify-end'}>
         <NavLink path='/franchise' currentPath={pathname} index={4}>
           Franchise
         </NavLink>

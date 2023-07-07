@@ -13,7 +13,7 @@ const imagesData = [
 ];
 
 const buttonStyle =
-  'bg-primary-white shadow-md rounded-full w-8 h-8 grid place-items-center';
+  'bg-white shadow-md rounded-full w-9 h-9 grid place-items-center';
 
 export default function FadingSlider() {
   const [index, setIndex] = useState<number>(0);
@@ -150,7 +150,7 @@ function SliderContent({
     <motion.div
       animate={status}
       variants={{
-        inactive: {opacity: 0, zIndex: 10},
+        inactive: {opacity: 0.5, zIndex: 10},
         active: {opacity: 1, zIndex: 20},
       }}
       style={{

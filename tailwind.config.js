@@ -28,16 +28,19 @@ module.exports = {
         'primary-yellow': '#FFD235',
         'primary-white': '#F8EFE8',
         'primary-orange': '#E54126',
+        pink: '#EEE2D8',
       },
       textColor: {
         'primary-yellow': '#FFD235',
         'primary-white': '#F8EFE8',
         'primary-orange': '#E54126',
+        pink: '#EEE2D8',
       },
       color: {
         'primary-yellow': '#FFD235',
         'primary-white': '#F8EFE8',
         'primary-orange': '#E54126',
+        pink: '#EEE2D8',
       },
       gridColumn: {
         'span-1/3': '1/3',
@@ -48,6 +51,8 @@ module.exports = {
         'span-1/8': '1/8',
         'span-6/-1': '6/-1',
         'span-4/22': '4/22',
+        'span-3/23': '3/23',
+        'span-5/21': '5/21',
       },
       borderColor: {
         'primary-white': '#F8EFE8',
