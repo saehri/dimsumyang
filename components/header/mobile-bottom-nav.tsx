@@ -23,6 +23,7 @@ export default function MobileBottomNavigation({
 
   useEffect(() => {
     setLastActive(pathname);
+    setActive(pathname);
   }, [pathname]);
 
   return (
@@ -30,7 +31,6 @@ export default function MobileBottomNavigation({
       <Link
         href='/'
         onClick={() => {
-          setActive('/');
           mobileSecondaryNavStatus(false);
         }}
       >
@@ -42,7 +42,6 @@ export default function MobileBottomNavigation({
       <Link
         href='/menu'
         onClick={() => {
-          setActive('/menu');
           mobileSecondaryNavStatus(false);
         }}
       >
@@ -54,7 +53,6 @@ export default function MobileBottomNavigation({
       <Link
         href='/prasmanan'
         onClick={() => {
-          setActive('/prasmanan');
           mobileSecondaryNavStatus(false);
         }}
       >
