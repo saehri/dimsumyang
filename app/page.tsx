@@ -11,14 +11,15 @@ import CommonLayout from '@/components/Layout/common-layout';
 export default function Home() {
   return (
     <CommonLayout>
-      <main className='bg-primary-white min-h-screen bg-deco-bottom lg:bg-none bg-contain bg-no-repeat bg-bottom'>
+      <main className='bg-primary-white min-h-screen lg:bg-none'>
         <HeroSection />
         <HeroImageDecoration />
 
-        <div className='pt-10 pb-24 relative bg-pink'>
+        <div className='pt-10 pb-24 relative bg-pink max-sm:bg-deco-bottom max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-bottom'>
           <div className='lg:hidden absolute left-0 top-[-40px] w-full h-10 bg-pink z-[5]'>
-            hello world
+            g
           </div>
+
           <InstagramAndTestimonial />
         </div>
       </main>
