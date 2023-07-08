@@ -50,10 +50,9 @@ const containerAnimationVrt = {
   },
 };
 
-const animationEasing = [0.32, 0.72, 0, 1];
 const cardAnimVrt = {
   hidden: {y: 50, opacity: 0},
-  show: {y: 0, opacity: 1, type: 'spring', damping: 300},
+  show: {y: 0, opacity: 1},
 };
 
 export default function TestiSlider() {
