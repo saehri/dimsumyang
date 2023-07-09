@@ -1,4 +1,4 @@
-import {Outfit, Calistoga} from 'next/font/google';
+import localFont from 'next/font/local';
 
 import './globals.css';
 import {Suspense} from 'react';
@@ -7,16 +7,8 @@ import Header from '@/components/header/header';
 import NavigationEvent from '@/components/loaders/nav-events';
 import PageLoader from '@/components/loaders/loader';
 
-const outfit = Outfit({
-  weight: ['400'],
-  subsets: ['latin'],
-  variable: '--outfit',
-});
-const calistoga = Calistoga({
-  weight: ['400'],
-  subsets: ['latin'],
-  variable: '--calistoga',
-});
+const outfit = localFont({src: './outfit.ttf', variable: '--outfit'});
+const calistoga = localFont({src: './calistoga.ttf', variable: '--calistoga'});
 
 export const metadata = {
   title: 'DimsumYang - Dimsum Prasmananya Indonesia',
