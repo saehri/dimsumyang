@@ -1,7 +1,13 @@
 'use client';
 
-import CommonLayout from '@/components/Layout/common-layout';
 import Image from 'next/image';
+import {m} from 'framer-motion';
+
+import CommonLayout from '@/components/layout/common-layout';
+import TokopediaIcon from '@/components/icons/tokopedia-icon';
+import ShopeeIcon from '@/components/icons/shopee-icon';
+import React from 'react';
+import MobileTopImageDecoration from '@/components/layout/mob-top-img-deco';
 
 export default function MenuPage() {
   return (
@@ -21,39 +27,75 @@ export default function MenuPage() {
 
           <div className='bg-pink mt-8 pt-4 pb-24 max-sm:bg-deco-bottom max-sm:bg-fixed max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-bottom'>
             <FrozenMenu />
+
+            <OrderProductButtons />
           </div>
         </div>
 
-        <MobileTopImageDecoration />
+        <MobileTopImageDecoration>
+          <Image
+            className='object-cover'
+            src='/assets/decoration/mobile menu page top image.png'
+            fill={true}
+            alt=''
+            priority
+          />
+        </MobileTopImageDecoration>
       </main>
     </CommonLayout>
   );
 }
 
-function MobileTopImageDecoration() {
+function OrderProductButtons() {
   return (
-    <div
-      className='lg:hidden absolute top-0 left-0 w-full overflow-hidden pt-[calc((471/430)*100%)]'
-      aria-hidden='true'
-    >
-      <div
-        className='absolute z-10 top-0 left-0 w-full h-full max-h-[430px]'
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(248, 239, 232, .45) 0%, #F8EFE8 91.26%)',
-        }}
-      ></div>
+    <div className='mx-auto w-max mt-14 flex flex-col gap-8 md:flex-row'>
+      <h4 className='font-calistoga text-xl lg:text-3xl text-center text-slate-950'>
+        Order Frozen di sini
+      </h4>
 
-      <div className='absolute z-0 top-0 left-0 w-full h-full max-h-[430px]'>
-        <Image
-          className='object-cover'
-          src='/assets/decoration/mobile menu page top image.png'
-          fill={true}
-          alt=''
-          priority
-        />
+      <div className='flex gap-4 justify-center'>
+        <OrderProductButton href='https://www.tokopedia.com/dimsumyang1000?utm_campaign=Shop-19332965-12146490-250722&utm_source=salinlink&utm_medium=share&_branch_match_id=1091541649935691728&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8nPzi9ITclM1MvJzMvWDyr38zYITMsIL0oCAA4J2qQiAAAA'>
+          <TokopediaIcon />
+          <span className='sr-only'>Order frozen dimsum di Tokopedia</span>
+        </OrderProductButton>
+
+        <OrderProductButton href={'https://shopee.co.id/shope.me1'}>
+          <ShopeeIcon />
+          <span className='sr-only'>Order frozen dimsum di Shopee</span>
+        </OrderProductButton>
       </div>
     </div>
+  );
+}
+
+function OrderProductButton({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) {
+  return (
+    <m.a
+      href={href}
+      target='_blank'
+      className='w-32 h-10 lg:w-48 lg:h-14 p-1 flex justify-center rounded-full border border-primary-orange'
+      variants={{
+        initials: {
+          background: 'rgb(248, 239, 232)',
+          color: 'rgb(229, 65, 38)',
+        },
+        hover: {
+          background: 'rgb(229, 65, 38)',
+          color: 'rgb(248, 239, 232)',
+        },
+      }}
+      transition={{duration: 0.1}}
+      initial='initials'
+      whileHover='hover'
+    >
+      {children}
+    </m.a>
   );
 }
 

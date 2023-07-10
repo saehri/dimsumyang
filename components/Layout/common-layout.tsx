@@ -1,3 +1,5 @@
+'use client';
+
 import {LazyMotion, domMax} from 'framer-motion';
 
 import Footer from '../footer/footer';

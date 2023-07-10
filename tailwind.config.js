@@ -56,6 +56,7 @@ module.exports = {
       },
       borderColor: {
         'primary-white': '#F8EFE8',
+        'primary-orange': '#E54126',
       },
     },
   },
