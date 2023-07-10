@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import MobileTopImageDecoration from '@/components/layout/mob-top-img-deco';
-import CommonLayout from '@/components/layout/common-layout';
+import MobileTopImageDecoration from '@/components/Layout/mob-top-img-deco';
+import CommonLayout from '@/components/Layout/common-layout';
 import PrasmananCardContainer from '@/components/cards/prasmanan-card';
 
 export default function PrasmananPage() {

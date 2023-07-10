@@ -6,7 +6,7 @@ import {m} from 'framer-motion';
 import FadingSlider from '@/components/sliders/fading-slider';
 import InstagramSlider from '@/components/sliders/instagram-slider';
 import TestiSlider from '@/components/sliders/testi-slider';
-import CommonLayout from '@/components/layout/common-layout';
+import CommonLayout from '@/components/Layout/common-layout';
 
 export default function Home() {
   return (

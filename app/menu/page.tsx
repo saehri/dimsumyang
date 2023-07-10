@@ -3,11 +3,11 @@
 import Image from 'next/image';
 import {m} from 'framer-motion';
 
-import CommonLayout from '@/components/layout/common-layout';
+import CommonLayout from '@/components/Layout/common-layout';
 import TokopediaIcon from '@/components/icons/tokopedia-icon';
 import ShopeeIcon from '@/components/icons/shopee-icon';
 import React from 'react';
-import MobileTopImageDecoration from '@/components/layout/mob-top-img-deco';
+import MobileTopImageDecoration from '@/components/Layout/mob-top-img-deco';
 
 export default function MenuPage() {
   return (
