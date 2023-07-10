@@ -6,7 +6,7 @@ import {m} from 'framer-motion';
 import FadingSlider from '@/components/sliders/fading-slider';
 import InstagramSlider from '@/components/sliders/instagram-slider';
 import TestiSlider from '@/components/sliders/testi-slider';
-import CommonLayout from '@/components/Layout/common-layout';
+import CommonLayout from '@/components/layout/common-layout';
 
 export default function Home() {
   return (
@@ -16,9 +16,7 @@ export default function Home() {
         <HeroImageDecoration />
 
         <div className='pt-10 pb-24 relative bg-pink max-sm:bg-deco-bottom max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-bottom'>
-          <div className='lg:hidden absolute left-0 top-[-40px] w-full h-10 bg-pink z-[5]'>
-            g
-          </div>
+          <div className='lg:hidden absolute left-0 top-[-40px] w-full h-10 bg-pink z-[5]'></div>
 
           <InstagramAndTestimonial />
         </div>
@@ -72,7 +70,7 @@ function HeroImageDecoration() {
   return (
     <section className='pt-[calc((698/890)*100%)] lg:hidden bg-primary-yellow relative'>
       <m.div
-        initial={{y: 100, opacity: 0}}
+        initial={{y: -100, opacity: 0}}
         animate={{y: 0, opacity: 1, transition: {delay: 0.4}}}
         className='absolute inset-0 z-10'
       >
