@@ -3,18 +3,25 @@ import Image from 'next/image';
 import MobileTopImageDecoration from '@/components/layout/mob-top-img-deco';
 import CommonLayout from '@/components/layout/common-layout';
 import PrasmananCardContainer from '@/components/cards/prasmanan-card';
+import ResellerCards from '@/components/cards/reseller-card';
 
 export default function PrasmananPage() {
   return (
     <CommonLayout>
       <main className='bg-primary-white min-h-screen relative'>
         <div className='relative z-20 pt-28 lg:pt-48'>
+          <TopImgDecoration />
+
           <PageTagline />
 
           <PrasmananCardContainer />
 
           <div className='bg-pink pt-10 pb-24 max-sm:bg-deco-bottom max-sm:bg-fixed max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-bottom'>
-            Page P P
+            <h2 className='font-calistoga text-xl lg:text-[40px] text-primary-orange text-center mb-6 lg:mb-16'>
+              Reseller
+            </h2>
+
+            <ResellerCards />
           </div>
         </div>
 
@@ -57,5 +64,24 @@ function PageTagline() {
         Lokasi Prasmanan
       </h2>
     </>
+  );
+}
+
+/* 
+  TOP DECORATION
+*/
+
+function TopImgDecoration() {
+  return (
+    <div className='hidden lg:grid grid-cols-[repeat(24,1fr)] w-full mb-5'>
+      <div className='pt-[calc((503/788)*100%)] relative lg:col-span-7/-7'>
+        <Image
+          className='absolute inset-0'
+          src='/assets/decoration/desktop prasmanan page top image.png'
+          fill={true}
+          alt=''
+        />
+      </div>
+    </div>
   );
 }

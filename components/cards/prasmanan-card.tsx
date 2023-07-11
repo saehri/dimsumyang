@@ -13,20 +13,22 @@ const animation = {
   children: {hidden: {y: 50, opacity: 0}, show: {y: 0, opacity: 1}},
 };
 
-export default function PrasmananCardContainer() {
+export default function PrasmananCards() {
   return (
     <m.div
       variants={animation.parent}
       initial='hidden'
       whileInView='show'
-      className='px-4 flex flex-col gap-4 md:grid md:grid-cols-[repeat(24,1fr)] mb-10'
+      className='px-4 lg:grid lg:grid-cols-[repeat(24,1fr)] mb-10'
     >
-      <PrasmananCard />
-      <PrasmananCard />
-      <PrasmananCard />
-      <PrasmananCard />
-      <PrasmananCard />
-      <PrasmananCard />
+      <div className='flex flex-col gap-4 lg:col-span-3/23 xl:col-span-5/21'>
+        <PrasmananCard />
+        <PrasmananCard />
+        <PrasmananCard />
+        <PrasmananCard />
+        <PrasmananCard />
+        <PrasmananCard />
+      </div>
     </m.div>
   );
 }
@@ -35,9 +37,9 @@ function PrasmananCard() {
   return (
     <m.article
       variants={animation.children}
-      className='bg-white shadow-sm rounded-[20px] p-4 pr-6 lg:py-6 text-[.8rem] lg:text-base mx-auto md:col-span-full'
+      className='bg-white shadow-sm rounded-[20px] p-4 pr-6 lg:py-6 text-[.8rem] lg:text-sm md:col-span-full'
     >
-      <h2 className='ml-[1.7em] lg:ml-[1.1em] lg:mb-7 text-sm lg:text-[28px] text-slate-950 font-calistoga'>
+      <h2 className='ml-[1.7em] lg:ml-[1.1em] lg:mb-7 text-base lg:text-2xl text-slate-950 font-calistoga'>
         This is Card Name
       </h2>
 
@@ -52,11 +54,9 @@ function PrasmananCard() {
           <path d='M12 2C7.589 2 4 5.589 4 9.995 3.971 16.44 11.696 21.784 12 22c0 0 8.029-5.56 8-12 0-4.411-3.589-8-8-8zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'></path>
         </svg>
 
-        <address className='font-outfit not-italic'>
+        <address className='font-outfit not-italic lg:text-[15px]'>
           <span className='sr-only'>Alamat:</span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nobis
-          sed, officia nulla quibusdam ipsa maiores accusantium pariatur quam
-          obcaecati.
+          Lorem ipsum, dolor sit amet.
         </address>
       </PrasmananCardGrid>
 
@@ -72,7 +72,7 @@ function PrasmananCard() {
           <path d='M13 7h-2v6h6v-2h-4z'></path>
         </svg>
 
-        <div className='flex flex-col gap-4 md:gap-10 md:flex-row md:justify-between lg:justify-normal lg:gap-[15%]'>
+        <div className='flex flex-col gap-4 md:gap-10 md:flex-row md:justify-between lg:justify-normal lg:gap-[10%]'>
           <OpenTime />
 
           <PrasmananLinks />
@@ -109,7 +109,7 @@ function PrasmananCardButton({
 
 function PrasmananCardGrid({children}: {children: React.ReactNode}) {
   return (
-    <div className='mt-4 grid gap-2 lg:gap-4 grid-cols-[18px,1fr] text-slate-900'>
+    <div className='mt-3 lg:mt-4 grid gap-2 lg:gap-4 grid-cols-[18px,1fr] text-slate-900'>
       {children}
     </div>
   );
@@ -122,7 +122,7 @@ function OpenTime() {
         <span className='sr-only'>
           Prasmanan ini buka dari hari senin sampai minggu
         </span>
-        <span className='font-calistoga text-sm lg:text-xl' aria-hidden='true'>
+        <span className='font-calistoga text-sm lg:text-lg' aria-hidden='true'>
           Senin - Minggu
         </span>
 
@@ -134,7 +134,7 @@ function OpenTime() {
 
       <p className='text-left flex flex-col'>
         <span className='sr-only'>Prsamanan ini libur pada hari</span>
-        <span className='font-calistoga text-sm lg:text-xl' aria-hidden='true'>
+        <span className='font-calistoga text-sm lg:text-lg' aria-hidden='true'>
           Libur:
         </span>
 

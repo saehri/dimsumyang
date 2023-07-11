@@ -53,6 +53,7 @@ module.exports = {
         'span-4/22': '4/22',
         'span-3/23': '3/23',
         'span-5/21': '5/21',
+        'span-7/-7': '7/-7',
       },
       borderColor: {
         'primary-white': '#F8EFE8',
