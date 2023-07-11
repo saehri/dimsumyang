@@ -14,10 +14,10 @@ export default function MenuPage() {
 
           <div className='flex flex-col gap-10'>
             <PackageDealMenu />
-            <IndividualMenu />P
+            <IndividualMenu />
           </div>
 
-          <div className='bg-pink mt-8 pt-4 pb-24 max-sm:bg-deco-bottom max-sm:bg-fixed max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-bottom'>
+          <div className='bg-pink mt-8 pt-4 pb-24 bg-deco-bottom lg:bg-deco-bottom-big bg-contain bg-no-repeat bg-bottom'>
             <FrozenMenu />
 
             <OrderProductButtons />
@@ -54,9 +54,10 @@ function PageTagline() {
         Kamu Mau
       </h1>
 
-      <p className='font-outfit text-center text-white text-sm mb-12 lg:hidden'>
-        Nikmati 30+ Varian Menu Dimsum Halal Yang Lezat
-      </p>
+      <h2 className='font-outfit lg:font-calistoga lg:leading-[1] text-center text-white lg:text-primary-orange lg:text-[40px] text-sm mb-12 lg:mb-16'>
+        Nikmati 30+ Varian Menu Dimsum
+        <br className='hidden lg:block' /> Halal Yang Lezat
+      </h2>
     </>
   );
 }

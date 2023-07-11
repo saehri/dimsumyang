@@ -72,7 +72,7 @@ export default function FadingSlider() {
           className={`absolute z-30 inset-0`}
         ></motion.div>
 
-        <div className='w-[130%] lg:w-[140%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]'>
+        <div className='w-[130%] lg:w-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] text-primary-white'>
           <ChinesseTextDecoration />
         </div>
       </div>
@@ -123,9 +123,7 @@ function SliderThumb({
   activeIndex: number;
 }) {
   const activeBg =
-    index === activeIndex
-      ? 'bg-primary-orange'
-      : 'bg-primary-white lg:bg-primary-yellow';
+    index === activeIndex ? 'bg-primary-orange' : 'bg-primary-white';
 
   return (
     <button
@@ -192,7 +190,7 @@ function ChinesseTextDecoration() {
       viewBox='0 0 386 130'
       fill='currentColor'
       xmlns='http://www.w3.org/2000/svg'
-      className='text-primary-white lg:text-primary-yellow'
+      className='text-primary-white'
     >
       <path
         d='M30.3633 99.4951C26.3444 110.739 19.5745 122.544 11.6002 129.627L0 123.47C7.32775 117.613 14.3639 106.761 18.256 96.195L30.3633 99.4951ZM106.81 42.4016L107.064 88.9165L16.6459 89.4252L16.3924 42.9103L54.2355 42.7016L54.02 2.27832L69.7911 3.12618C69.6643 4.35232 68.8783 5.16104 66.7738 5.44801L66.8372 16.405L115.989 16.118L116.052 28.1445L66.9006 28.4315L66.9766 42.6364L106.81 42.4016ZM94.3733 77.0856L94.2465 54.5065L28.4109 54.8847L28.5377 77.4639L94.3733 77.0856ZM43.5228 127.957C43.4847 120.926 42.3691 109.304 40.6069 100.252L52.562 98.9603C54.451 107.882 55.9597 119.361 56.1245 126.248L43.5228 127.957ZM76.1173 127.501C74.7608 120.47 70.6278 109.004 66.7738 100.382L78.057 97.6168C82.1773 105.978 86.5638 117.183 88.3133 124.187L76.1173 127.501ZM112.655 128.779C109.067 120.822 100.319 108.3 92.5224 99.2734L103.793 94.1993C111.59 102.808 120.718 114.796 124.711 123.027L112.655 128.779Z'

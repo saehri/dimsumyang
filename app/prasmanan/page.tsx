@@ -16,7 +16,7 @@ export default function PrasmananPage() {
 
           <PrasmananCardContainer />
 
-          <div className='bg-pink pt-10 pb-24 max-sm:bg-deco-bottom max-sm:bg-fixed max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-bottom'>
+          <div className='bg-pink pt-10 pb-24 bg-deco-bottom lg:bg-deco-bottom-big bg-contain bg-no-repeat bg-bottom'>
             <h2 className='font-calistoga text-xl lg:text-[40px] text-primary-orange text-center mb-6 lg:mb-16'>
               Reseller
             </h2>
@@ -30,6 +30,7 @@ export default function PrasmananPage() {
             className='object-cover'
             src='/assets/decoration/mobile prasmanan page top image.png'
             fill={true}
+            sizes='(max-width: 1024px) 1024px'
             alt=''
             priority
           />
