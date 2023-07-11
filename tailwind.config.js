@@ -14,10 +14,14 @@ module.exports = {
       backgroundImage: {
         'deco-top-yellow':
           "url('/assets/decoration/mobile top decoration yellow.png')",
+        'deco-top-yellow-big':
+          "url('/assets/decoration/desktop top decoration yellow.png')",
         'deco-top': "url('/assets/decoration/mobile top decoration.png')",
         'deco-bottom-yellow':
           "url('/assets/decoration/mobile bottom decoration yellow.png')",
         'deco-bottom': "url('/assets/decoration/mobile bottom decoration.png')",
+        'deco-bottom-big':
+          "url('/assets/decoration/desktop bottom decoration.png')",
       },
       screens: {
         'h-xs': {raw: '(min-height: 580px)'},

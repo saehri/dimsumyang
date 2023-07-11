@@ -29,6 +29,7 @@ export default function MenuPage() {
             className='object-cover'
             src='/assets/decoration/mobile menu page top image.png'
             fill={true}
+            sizes='(max-width: 1024px) 1024px'
             alt=''
             priority
           />

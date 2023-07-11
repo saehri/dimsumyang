@@ -14,7 +14,7 @@ export default function MenuCard() {
           </h3>
 
           <div>
-            <p className='font-outfit text-xs lg:text-sm text-slate-600 leading-[1.3] break-all'>
+            <p className='font-outfit text-[12.8px] lg:text-sm text-slate-600 leading-[1.3] break-all'>
               <span className='sr-only'>Deskripsi COMBO MENU:</span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Suscipit, doloremque?

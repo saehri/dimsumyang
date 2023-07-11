@@ -39,6 +39,7 @@ export default function MobileLogo() {
               src='/assets/decoration/logo white.png'
               alt='0'
               fill={true}
+              sizes='(max-width: 1024px) 46px'
               priority
             />
           </m.div>
@@ -52,6 +53,7 @@ export default function MobileLogo() {
               src='/assets/decoration/logo.png'
               alt='0'
               fill={true}
+              sizes='(max-width: 1024px) 46px'
               priority
             />
           </m.div>
@@ -62,6 +64,7 @@ export default function MobileLogo() {
             src='/assets/decoration/logo.png'
             alt='0'
             fill={true}
+            sizes='(max-width: 1024px) 46px'
             priority
           />
         </div>

@@ -173,6 +173,7 @@ export default function MobileMenu({
           priority
           src='/assets/decoration/mobile top decoration yellow.png'
           fill={true}
+          sizes='(max-width: 1024px) 100vw'
           alt=''
         />
       </div>
@@ -185,6 +186,7 @@ export default function MobileMenu({
           priority
           src='/assets/decoration/mobile bottom decoration yellow.png'
           fill={true}
+          sizes='(max-width: 1024px) 100vw'
           alt=''
         />
       </div>

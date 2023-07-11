@@ -21,6 +21,7 @@ export default function Footer() {
               <Image
                 src='/assets/decoration/footer%20image%20left.png'
                 fill={true}
+                sizes='(min-width: 1024px) 312px'
                 alt=''
               />
             </div>
@@ -33,12 +34,13 @@ export default function Footer() {
               <Image
                 src='/assets/decoration/footer%20image%20top.png'
                 fill={true}
+                sizes='(min-width: 1024px) 528px'
                 alt=''
               />
             </div>
           </div>
 
-          <div className='col-span-1/8 flex items-center gap-4 font-calistoga h-max text-xl 2xl:text-4xl'>
+          <div className='col-span-1/8 flex items-center gap-4 font-calistoga h-max text-xl'>
             <span className='text-primary-white'>Info Kemitraan:</span>
 
             <m.a
@@ -61,7 +63,7 @@ export default function Footer() {
 
           <div className='col-span-full bg-blue-60 grid grid-cols-[repeat(12,1fr)]'>
             <div className='font-calistoga col-span-1/5'>
-              <span className='text-primary-white text-xl mb-5 block 2xl:text-4xl'>
+              <span className='text-primary-white text-xl mb-5 block'>
                 Available On:
               </span>
 
@@ -119,7 +121,7 @@ export default function Footer() {
             </div>
 
             <div className='font-calistoga' style={{gridColumn: '6/10'}}>
-              <span className='text-primary-white text-xl mb-5 block 2xl:text-4xl'>
+              <span className='text-primary-white text-xl mb-5 block'>
                 Order Frozen:
               </span>
 

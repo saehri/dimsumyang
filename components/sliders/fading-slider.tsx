@@ -170,13 +170,15 @@ function SliderContent({
             },
           },
         }}
-        className='shrink-0 rounded-full w-full h-full'
+        className='shrink-0 rounded-full w-full h-full relative'
       >
         <Image
+          className='h-full w-full absolute top-0 left-0'
           src={`/assets/images/${link}.png`}
           alt=''
           priority
           fill={true}
+          sizes='(min-width: 1024px) 512px, 1024px'
           draggable='false'
         />
       </motion.div>

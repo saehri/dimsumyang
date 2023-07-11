@@ -15,8 +15,8 @@ export default function Home() {
         <HeroSection />
         <HeroImageDecoration />
 
-        <div className='pt-10 pb-24 relative bg-pink max-sm:bg-deco-bottom max-sm:bg-contain max-sm:bg-no-repeat max-sm:bg-bottom'>
-          <div className='lg:hidden absolute left-0 top-[-40px] w-full h-10 bg-pink z-[5]'></div>
+        <div className='pt-10 pb-24 relative bg-pink bg-deco-bottom lg:bg-deco-bottom-big bg-contain bg-no-repeat bg-bottom'>
+          <div className='absolute left-0 top-[-40px] w-full h-10 bg-pink z-[5]'></div>
 
           <InstagramAndTestimonial />
         </div>
@@ -55,7 +55,7 @@ function InstagramAndTestimonial() {
 */
 function HeroSection() {
   return (
-    <section className='bg-primary-yellow lg:bg-primary-white pt-28 pb-4 lg:pt-48 overflow-hidden grid grid-cols-[repeat(12,1fr)] px-4 bg-deco-top-yellow bg-contain bg-no-repeat bg-top lg:bg-none lg:pb-8'>
+    <section className='bg-primary-yellow pt-28 pb-4 lg:pt-48 overflow-hidden grid grid-cols-[repeat(12,1fr)] px-4 bg-deco-top-yellow lg:bg-deco-top-yellow-big bg-contain bg-no-repeat bg-top lg:pb-8'>
       <div style={{gridColumn: '3/11'}}>
         <FadingSlider />
       </div>
@@ -68,15 +68,26 @@ function HeroSection() {
 */
 function HeroImageDecoration() {
   return (
-    <section className='pt-[calc((698/890)*100%)] lg:hidden bg-primary-yellow relative'>
+    <section className='pt-[calc((698/890)*100%)] lg:pt-[calc((703/1449)*100%)] bg-primary-yellow relative'>
       <m.div
         initial={{y: -100, opacity: 0}}
         animate={{y: 0, opacity: 1, transition: {delay: 0.4}}}
         className='absolute inset-0 z-10'
       >
         <Image
+          className='lg:hidden'
           priority
-          src='/assets/images/mobile%20hero%20image.png'
+          src='/assets/images/mobile hero image.png'
+          sizes='(max-width: 1024px) 100vw'
+          alt=''
+          fill={true}
+        />
+
+        <Image
+          className='hidden lg:block'
+          priority
+          src='/assets/images/desktop hero image.png'
+          sizes='(max-width: 1024px) 100vw'
           alt=''
           fill={true}
         />
