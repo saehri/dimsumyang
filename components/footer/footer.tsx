@@ -14,7 +14,7 @@ import FacebokIcon from '../icons/facebook-icon';
 export default function Footer() {
   return (
     <footer className='hidden lg:grid grid-cols-[repeat(24,1fr)] bg-primary-orange pt-8 pb-14 2xl:pb-24'>
-      <div className='col-span-4/22 grid grid-cols-[repeat(12,1fr)]'>
+      <div className='lg:col-span-3/23 xl:col-span-5/21 grid grid-cols-[repeat(12,1fr)]'>
         <div className='col-span-1/3'>
           <div className='pt-[calc((117/156)*100%)] relative'>
             <div className='absolute inset-0'>

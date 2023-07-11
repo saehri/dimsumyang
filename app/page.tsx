@@ -31,7 +31,7 @@ export default function Home() {
 function InstagramAndTestimonial() {
   return (
     <section className='grid grid-cols-[repeat(24,1fr)] px-5 lg:px-0'>
-      <div className='col-span-full flex flex-col gap-8 lg:gap-0 md:col-span-4/22 lg:grid lg:grid-cols-[repeat(12,1fr)]'>
+      <div className='col-span-full flex flex-col gap-8 lg:gap-0 lg:col-span-3/23 xl:col-span-5/21 lg:grid lg:grid-cols-[repeat(12,1fr)]'>
         <div className='lg:col-span-1/6 flex flex-col gap-2 lg:gap-8'>
           <h2 className='text-slate-950 text-xl lg:text-2xl mb-4 font-calistoga text-center lg:text-left'>
             Meet on Instagram
