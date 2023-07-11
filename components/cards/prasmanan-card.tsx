@@ -19,6 +19,7 @@ export default function PrasmananCards() {
       variants={animation.parent}
       initial='hidden'
       whileInView='show'
+      viewport={{once: true}}
       className='px-4 lg:grid lg:grid-cols-[repeat(24,1fr)] mb-10'
     >
       <div className='flex flex-col gap-4 lg:col-span-3/23 xl:col-span-5/21'>

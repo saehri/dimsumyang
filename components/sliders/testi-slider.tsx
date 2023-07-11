@@ -62,6 +62,7 @@ export default function TestiSlider() {
         variants={containerAnimationVrt}
         initial='hidden'
         whileInView='show'
+        viewport={{once: true}}
         className='flex flex-col gap-3 lg:absolute inset-0 max-sm:h-72 overflow-y-auto pb-2 custom-scrollbar'
       >
         {testimonial.map((person, i) => (

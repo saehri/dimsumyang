@@ -16,6 +16,7 @@ export default function ResellerCards() {
       variants={animation.parent}
       initial='hidden'
       whileInView='show'
+      viewport={{once: true}}
       className='px-4 md:grid md:grid-cols-[repeat(24,1fr)]'
     >
       <div className='gap-4 gap-y-6 lg:gap-y-6 lg:gap-8 grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] xl:grid-cols-[repeat(5,minmax(160px,1fr))] col-span-full lg:col-span-3/23 xl:col-span-5/21'>
