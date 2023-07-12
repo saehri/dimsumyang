@@ -8,8 +8,10 @@ import MenuCard from '@/components/cards/menu-card';
 export default function MenuPage() {
   return (
     <CommonLayout>
-      <main className='bg-primary-white min-h-screen pt-28 lg:pt-48 relative'>
+      <main className='bg-primary-white min-h-screen pt-16 lg:pt-28 relative'>
         <div className='relative z-20'>
+          <TopImage />
+
           <PageTagline />
 
           <div className='flex flex-col gap-10'>
@@ -24,18 +26,42 @@ export default function MenuPage() {
           </div>
         </div>
 
-        <MobileTopImageDecoration>
-          <Image
-            className='object-cover'
-            src='/assets/decoration/mobile menu page top image.png'
-            fill={true}
-            sizes='(max-width: 1024px) 1024px'
-            alt=''
-            priority
-          />
-        </MobileTopImageDecoration>
+        <MobileTopImageDecoration />
       </main>
     </CommonLayout>
+  );
+}
+
+/* 
+  TOP IMAGE
+ */
+
+function TopImage() {
+  return (
+    <div className='grid grid-cols-[repeat(24,1fr)] px-4 lg:px-0 mb-6 lg:mb-10'>
+      <div
+        className='pt-[calc((287/430)*100%)] lg:pt-[calc((509/879)*100%)] col-span-full lg:col-span-3/23 xl:col-span-5/21 relative'
+        aria-hidden='true'
+      >
+        <Image
+          draggable='false'
+          className='absolute inset-0 lg:hidden'
+          src='/assets/decoration/mobile menu page top img.png'
+          alt=''
+          fill={true}
+          sizes='(max-width: 1024px) 1024px'
+        />
+
+        <Image
+          draggable='false'
+          className='absolute inset-0 hidden lg:block'
+          src='/assets/decoration/desktop menu page top img.png'
+          alt=''
+          fill={true}
+          sizes='(min-width: 1024px) 1784px'
+        />
+      </div>
+    </div>
   );
 }
 
@@ -45,18 +71,12 @@ export default function MenuPage() {
 function PageTagline() {
   return (
     <>
-      <h1
-        className='text-xl font-calistoga text-primary-yellow text-center mb-4 lg:hidden'
-        style={{textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}
-      >
-        Kami Tahu Apa Yang
-        <br />
-        Kamu Mau
+      <h1 className='text-xl font-calistoga text-primary-orange text-center md:text-4xl mb-2 lg:mb-3'>
+        Kami Tahu Apa Yang Kamu Mau
       </h1>
 
-      <h2 className='font-outfit lg:font-calistoga lg:leading-[1] text-center text-white lg:text-primary-orange lg:text-[40px] text-sm mb-12 lg:mb-16'>
-        Nikmati 30+ Varian Menu Dimsum
-        <br className='hidden lg:block' /> Halal Yang Lezat
+      <h2 className='font-outfit text-center text-slate-950 text-sm md:text-base mb-10 lg:mb-14'>
+        Nikmati 30+ Varian Menu Dimsum Halal Yang Lezat
       </h2>
     </>
   );
@@ -74,7 +94,7 @@ function MenuContainer({
 }) {
   return (
     <div>
-      <h2 className='text-center font-calistoga font-normal text-2xl lg:text-3xl text-slate-950 mb-4 lg:mb-10'>
+      <h2 className='text-center font-calistoga font-normal text-xl lg:text-3xl text-slate-950 mb-4 lg:mb-10'>
         {name}
       </h2>
       {children}
