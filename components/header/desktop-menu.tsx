@@ -88,7 +88,6 @@ export default function DesktopMenu() {
           logoWhiteOpacity={logoWhiteOpacity}
           logoYellowOpacity={logoYellowOpacity}
           logoY={logoY}
-          pathname={pathname}
         />
       </nav>
     </motion.div>
@@ -143,7 +142,6 @@ type LogoProps = {
   logoYellowOpacity: MotionValue<number>;
   logoWhiteOpacity: MotionValue<number>;
   logoY: MotionValue<number>;
-  pathname: string;
 };
 
 function DesktopMenuLogo({
@@ -151,67 +149,46 @@ function DesktopMenuLogo({
   logoYellowOpacity,
   logoWhiteOpacity,
   logoY,
-  pathname,
 }: LogoProps) {
   return (
     <>
-      {pathname === '/' ? (
-        <>
-          <motion.div
-            initial={{opacity: 0, scale: 0.5}}
-            animate={{opacity: 1, scale: 1, transition: {delay: 0.8}}}
-            style={{
-              scale: logoScale,
-              x: '-50%',
-              y: logoY,
-              opacity: logoYellowOpacity,
-            }}
-            className='w-[92px] h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'
-          >
-            <Image
-              src='/assets/decoration/logo.png'
-              alt=''
-              fill={true}
-              sizes='(min-width: 1024px) 92px'
-            />
-          </motion.div>
+      <motion.div
+        initial={{opacity: 0, scale: 0.5}}
+        animate={{opacity: 1, scale: 1, transition: {delay: 0.8}}}
+        style={{
+          scale: logoScale,
+          x: '-50%',
+          y: logoY,
+          opacity: logoYellowOpacity,
+        }}
+        className='w-[92px] h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'
+      >
+        <Image
+          src='/assets/decoration/logo.png'
+          alt=''
+          fill={true}
+          sizes='(min-width: 1024px) 92px'
+        />
+      </motion.div>
 
-          <motion.div
-            initial={{opacity: 0, scale: 0.5}}
-            animate={{opacity: 1, scale: 1, transition: {delay: 0.8}}}
-            style={{
-              scale: logoScale,
-              x: '-50%',
-              y: logoY,
-              opacity: logoWhiteOpacity,
-            }}
-            className='w-[92px] h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'
-          >
-            <Image
-              src='/assets/decoration/logo white.png'
-              alt=''
-              fill={true}
-              sizes='(min-width: 1024px) 92px'
-            />
-          </motion.div>
-        </>
-      ) : (
-        <motion.div
-          style={{
-            scale: logoScale,
-            x: '-50%',
-            y: logoY,
-          }}
-          className='w-[92px] h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'
-        >
-          <Image
-            src='/assets/decoration/logo.png'
-            alt=''
-            fill={true}
-            sizes='(min-width: 1024px) 92px'
-          />
-        </motion.div>
-      )}
+      <motion.div
+        initial={{opacity: 0, scale: 0.5}}
+        animate={{opacity: 1, scale: 1, transition: {delay: 0.8}}}
+        style={{
+          scale: logoScale,
+          x: '-50%',
+          y: logoY,
+          opacity: logoWhiteOpacity,
+        }}
+        className='w-[92px] h-[140px] left-1/2 -translate-x-1/2 top-4 hidden lg:block absolute'
+      >
+        <Image
+          src='/assets/decoration/logo white.png'
+          alt=''
+          fill={true}
+          sizes='(min-width: 1024px) 92px'
+        />
+      </motion.div>
     </>
   );
 }
