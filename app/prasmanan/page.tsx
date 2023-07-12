@@ -25,16 +25,7 @@ export default function PrasmananPage() {
           </div>
         </div>
 
-        <MobileTopImageDecoration>
-          <Image
-            className='object-cover'
-            src='/assets/decoration/mobile prasmanan page top image.png'
-            fill={true}
-            sizes='(max-width: 1024px) 1024px'
-            alt=''
-            priority
-          />
-        </MobileTopImageDecoration>
+        <MobileTopImageDecoration />
       </main>
     </CommonLayout>
   );
