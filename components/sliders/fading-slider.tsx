@@ -50,16 +50,19 @@ export default function FadingSlider() {
         opacity: 1,
         transition: {delay: 0.3, type: 'spring'},
       }}
+      className='relative pt-[calc((430/607)*100%)] bg-lim-400'
     >
-      <div className='relative flex gap-4 pt-[calc((1/1)*100%)] lg:pt-0 lg:w-[512px] lg:h-[512px] lg:mx-auto'>
-        {imagesData.map((img) => (
-          <SliderContent
-            key={`heroImgae-${img.id}`}
-            index={img.id}
-            link={img.link}
-            activeIndex={index}
-          />
-        ))}
+      <div className='absolute w-full top-0 left-0 grid grid-cols-[repeat(6,1fr)] bg-orane-300'>
+        <SliderContentContainer>
+          {imagesData.map((img) => (
+            <SliderContent
+              key={`heroImgae-${img.id}`}
+              index={img.id}
+              link={img.link}
+              activeIndex={index}
+            />
+          ))}
+        </SliderContentContainer>
 
         <motion.div
           drag='x'
@@ -72,12 +75,12 @@ export default function FadingSlider() {
           className={`absolute z-30 inset-0`}
         ></motion.div>
 
-        <div className='w-[130%] lg:w-[150%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] text-primary-white'>
+        <div className='w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] text-primary-white'>
           <ChinesseTextDecoration />
         </div>
       </div>
 
-      <div className='flex gap-2 justify-center items-center mt-6'>
+      <div className='flex gap-2 justify-center items-center'>
         <SliderThumb setActive={setIndex} index={0} activeIndex={index} />
         <SliderThumb setActive={setIndex} index={1} activeIndex={index} />
       </div>
@@ -113,23 +116,11 @@ export default function FadingSlider() {
   );
 }
 
-function SliderThumb({
-  setActive,
-  index,
-  activeIndex,
-}: {
-  setActive: Dispatch<SetStateAction<number>>;
-  index: number;
-  activeIndex: number;
-}) {
-  const activeBg =
-    index === activeIndex ? 'bg-primary-orange' : 'bg-primary-white';
-
+function SliderContentContainer({children}: {children: React.ReactNode}) {
   return (
-    <button
-      className={`h-[2px] w-10 lg:w-20 rounded-full ${activeBg}`}
-      onClick={() => setActive(index)}
-    ></button>
+    <div className='pt-[100%] relative w-full' style={{gridColumn: '2/-2'}}>
+      {children}
+    </div>
   );
 }
 
@@ -155,7 +146,7 @@ function SliderContent({
         touchAction: 'none',
       }}
       transition={{duration: 1}}
-      className='absolute inset-0'
+      className='absolute inset-0 bg-cyn-300'
     >
       <motion.div
         animate={{
@@ -168,10 +159,9 @@ function SliderContent({
             },
           },
         }}
-        className='shrink-0 rounded-full w-full h-full relative'
+        className='shrink-0 rounded-full absolute w-full h-full inset-0'
       >
         <Image
-          className='h-full w-full absolute top-0 left-0'
           src={`/assets/images/${link}.png`}
           alt=''
           priority
@@ -181,6 +171,26 @@ function SliderContent({
         />
       </motion.div>
     </motion.div>
+  );
+}
+
+function SliderThumb({
+  setActive,
+  index,
+  activeIndex,
+}: {
+  setActive: Dispatch<SetStateAction<number>>;
+  index: number;
+  activeIndex: number;
+}) {
+  const activeBg =
+    index === activeIndex ? 'bg-primary-orange' : 'bg-primary-white';
+
+  return (
+    <button
+      className={`h-[2px] w-10 lg:w-20 rounded-full ${activeBg}`}
+      onClick={() => setActive(index)}
+    ></button>
   );
 }
 

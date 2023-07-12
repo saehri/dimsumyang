@@ -55,8 +55,8 @@ function InstagramAndTestimonial() {
 */
 function HeroSection() {
   return (
-    <section className='bg-primary-yellow pt-28 pb-4 lg:pt-48 overflow-hidden grid grid-cols-[repeat(12,1fr)] px-4 bg-deco-top-yellow lg:bg-deco-top-yellow-big bg-contain bg-no-repeat bg-top lg:pb-8'>
-      <div style={{gridColumn: '3/11'}}>
+    <section className='bg-primary-yellow pt-28 pb-4 lg:pt-48 overflow-hidden grid grid-cols-[repeat(24,1fr)] px-4 bg-deco-top-yellow lg:bg-deco-top-yellow-big bg-contain bg-no-repeat bg-top lg:pb-8'>
+      <div className='bg-purpl-300 col-span-full lg:col-span-6/20'>
         <FadingSlider />
       </div>
     </section>
