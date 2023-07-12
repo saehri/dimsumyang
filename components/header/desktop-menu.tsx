@@ -49,7 +49,11 @@ export default function DesktopMenu() {
 
   return (
     <motion.div
-      style={{height, backdropFilter: useMotionTemplate`blur(${blur}px)`}}
+      style={{
+        height,
+        backdropFilter: useMotionTemplate`blur(${blur}px)`,
+        WebkitBackdropFilter: useMotionTemplate`blur(${blur}px)`,
+      }}
       className='hidden lg:grid w-full col-span-full grid-cols-[repeat(24,1fr)]'
     >
       <nav className='relative grid grid-cols-[repeat(2,max(370px,40%))] font-calistoga gap-4 justify-between items-center lg:col-span-3/23 xl:col-span-5/21 w-full mx-auto px-8 lg:px-0'>
@@ -105,7 +109,7 @@ function NavLink({children, path, currentPath, index}: NavLinkProps) {
   return (
     <Link href={path} prefetch>
       <motion.div
-        className='relative px-2'
+        className='relative px-3'
         initial={{y: -100, opacity: 0, color: 'rgb(2, 6, 23)'}}
         animate={{y: 0, opacity: 1, transition: {delay: 0.2 + index * 0.1}}}
         whileHover={{
@@ -113,12 +117,7 @@ function NavLink({children, path, currentPath, index}: NavLinkProps) {
           transition: {delay: 0, duration: 0.1},
         }}
       >
-        <span className='relative z-50 text-xl'>{children}</span>
-        {path.match(/((F|f)ranchise|(R|r)eseller)/) && (
-          <span className='absolute text-primary-orange text-sm -top-3 left-2 z-20'>
-            Join
-          </span>
-        )}
+        <span className='relative z-50 text-xl text-center'>{children}</span>
 
         {path === currentPath && (
           <motion.div

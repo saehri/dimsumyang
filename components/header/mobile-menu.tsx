@@ -2,7 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {m} from 'framer-motion';
 
-const menuStyle = 'flex flex-col gap-2 h-xs:gap-4 h-s:gap-8 items-end xs:mb-8';
+const menuStyle =
+  'flex flex-col gap-2 h-xs:gap-4 h-s:gap-8 items-end xs:mb-8 relative z-10';
 
 const animationEasing = [0.32, 0.72, 0, 1];
 const imgAnimationVariant = {
@@ -97,24 +98,12 @@ export default function MobileMenu({
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
         <m.div variants={linkAnimationVariant} custom={1}>
           <Link href='/' onClick={() => setStatus(false)}>
-            <span
-              className='text-primary-orange text-sm text-right block'
-              aria-hidden='true'
-            >
-              Join
-            </span>
             <span>Franchise</span>
           </Link>
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={2}>
           <Link href='/' onClick={() => setStatus(false)}>
-            <span
-              className='text-primary-orange text-sm text-right block'
-              aria-hidden='true'
-            >
-              Join
-            </span>
             <span>Reseller</span>
           </Link>
         </m.div>
