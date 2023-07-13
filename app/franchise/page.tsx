@@ -7,6 +7,7 @@ export default function Redirect() {
   const router = useRouter();
 
   useEffect(() => {
+    router.prefetch('/franchise/dim');
     router.push('/franchise/dim');
   }, []);
 
