@@ -38,7 +38,7 @@ function PrasmananCard() {
   return (
     <m.article
       variants={animation.children}
-      className='bg-white shadow-sm rounded-[20px] p-4 pr-6 lg:py-6 text-[.8rem] lg:text-sm md:col-span-full'
+      className='bg-white shadow-sm rounded-[20px] p-4 pr-6 lg:py-6 text-sm lg:text-base md:col-span-full'
     >
       <h2 className='ml-[1.7em] lg:ml-[1.1em] lg:mb-7 text-base lg:text-2xl text-slate-950 font-calistoga'>
         This is Card Name
@@ -55,7 +55,7 @@ function PrasmananCard() {
           <path d='M12 2C7.589 2 4 5.589 4 9.995 3.971 16.44 11.696 21.784 12 22c0 0 8.029-5.56 8-12 0-4.411-3.589-8-8-8zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'></path>
         </svg>
 
-        <address className='font-outfit not-italic lg:text-[15px]'>
+        <address className='font-outfit not-italic lg:text-[1.1rem]'>
           <span className='sr-only'>Alamat:</span>
           Lorem ipsum, dolor sit amet.
         </address>

@@ -19,14 +19,14 @@ export default function PrasmananPage() {
             secondary='Bertekad menjadi yang tersayang dengan selalu ada disetiap kamu mau'
           />
 
-          <h3 className='font-calistoga text-xl lg:text-[40px] text-slate-950 lg:text-primary-orange text-center mb-6 lg:mb-16'>
+          <h3 className='font-calistoga text-xl lg:text-4xl text-slate-950 lg:text-primary-orange text-center mb-6 lg:mb-12'>
             Lokasi Prasmanan
           </h3>
 
           <PrasmananCardContainer />
 
           <div className='bg-pink pt-10 pb-24 bg-deco-bottom lg:bg-deco-bottom-big bg-contain bg-no-repeat bg-bottom'>
-            <h4 className='font-calistoga text-xl lg:text-[40px] text-primary-orange text-center mb-6 lg:mb-16'>
+            <h4 className='font-calistoga text-xl lg:text-4xl text-primary-orange text-center mb-6 lg:mb-12'>
               Reseller
             </h4>
 
