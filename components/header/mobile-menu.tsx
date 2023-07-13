@@ -97,19 +97,19 @@ export default function MobileMenu({
     >
       <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
         <m.div variants={linkAnimationVariant} custom={1}>
-          <Link href='/' onClick={() => setStatus(false)}>
+          <Link href='/franchise' onClick={() => setStatus(false)}>
             <span>Franchise</span>
           </Link>
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={2}>
-          <Link href='/' onClick={() => setStatus(false)}>
+          <Link href='/reseller' onClick={() => setStatus(false)}>
             <span>Reseller</span>
           </Link>
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={3}>
-          <Link href='/' onClick={() => setStatus(false)}>
+          <Link href='/profile' onClick={() => setStatus(false)}>
             <span>Profile</span>
           </Link>
         </m.div>
@@ -129,13 +129,21 @@ export default function MobileMenu({
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={6}>
-          <Link href='/' onClick={() => setStatus(false)}>
+          <Link
+            href='https://www.tokopedia.com/dimsumyang1000?utm_campaign=Shop-19332965-12146490-250722&utm_source=salinlink&utm_medium=share&_branch_match_id=1091541649935691728&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8nPzi9ITclM1MvJzMvWDyr38zYITMsIL0oCAA4J2qQiAAAA'
+            onClick={() => setStatus(false)}
+            target='_blank'
+          >
             <span>Tokopedia</span>
           </Link>
         </m.div>
 
         <m.div variants={linkAnimationVariant} custom={7}>
-          <Link href='/' onClick={() => setStatus(false)}>
+          <Link
+            href='https://shopee.co.id/shope.me'
+            onClick={() => setStatus(false)}
+            target='_blank'
+          >
             <span>Shopee</span>
           </Link>
         </m.div>
