@@ -21,7 +21,7 @@ export default function TopImage({src}: Props) {
   }
 
   return (
-    <div className='grid grid-cols-[repeat(24,1fr)] lg:px-0 mb-6 lg:mb-10 overflow-hidde'>
+    <div className='grid grid-cols-[repeat(24,1fr)] lg:px-0 mb-6 lg:mb-10 overflow-hidden'>
       <m.div
         initial={{scale: 1.1, opacity: 0}}
         animate={loaded && {scale: 1, opacity: 1}}
