@@ -16,7 +16,7 @@ export default function MobileLogo() {
 
   useEffect(() => {
     return scrollY.on('change', (e) => {
-      if (e > 424 - 35) {
+      if (e > 280 - 35) {
         logoYellowOpacity.set(1);
         logoWhiteOpacity.set(0);
       } else {
@@ -28,47 +28,33 @@ export default function MobileLogo() {
 
   return (
     <>
-      {pathname === '/' ? (
-        <>
-          <m.div
-            style={{opacity: logoWhiteOpacity}}
-            transition={{duration: 1}}
-            className={logoStyle}
-          >
-            <Image
-              src='/assets/decoration/logo white.png'
-              alt='0'
-              fill={true}
-              sizes='(max-width: 1024px) 46px'
-              priority
-            />
-          </m.div>
+      <m.div
+        style={{opacity: logoWhiteOpacity}}
+        transition={{duration: 1}}
+        className={logoStyle}
+      >
+        <Image
+          src='/assets/decoration/logo white.png'
+          alt='0'
+          fill={true}
+          sizes='(max-width: 1024px) 46px'
+          priority
+        />
+      </m.div>
 
-          <m.div
-            style={{opacity: logoYellowOpacity}}
-            transition={{duration: 1}}
-            className={logoStyle}
-          >
-            <Image
-              src='/assets/decoration/logo.png'
-              alt='0'
-              fill={true}
-              sizes='(max-width: 1024px) 46px'
-              priority
-            />
-          </m.div>
-        </>
-      ) : (
-        <div className={logoStyle}>
-          <Image
-            src='/assets/decoration/logo.png'
-            alt='0'
-            fill={true}
-            sizes='(max-width: 1024px) 46px'
-            priority
-          />
-        </div>
-      )}
+      <m.div
+        style={{opacity: logoYellowOpacity}}
+        transition={{duration: 1}}
+        className={logoStyle}
+      >
+        <Image
+          src='/assets/decoration/logo.png'
+          alt='0'
+          fill={true}
+          sizes='(max-width: 1024px) 46px'
+          priority
+        />
+      </m.div>
     </>
   );
 }

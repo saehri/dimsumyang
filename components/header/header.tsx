@@ -31,6 +31,7 @@ export default function Header() {
             <MobileMenu
               state={mobileMenuVisible}
               setStatus={setMobileMenuVisible}
+              pathname={pathname}
             />
 
             <DesktopMenu />
