@@ -1,23 +1,30 @@
 'use client';
 
-import {m} from 'framer-motion';
+import {useState} from 'react';
 import Image from 'next/image';
+import {m} from 'framer-motion';
 
 type Props = {
   src: 'menu' | 'prasmanan';
 };
 
 export default function TopImage({src}: Props) {
+  const [loaded, setLoaded] = useState<boolean>(false);
+
   const imageAspectRatio =
     src === 'menu'
       ? 'pt-[calc((287/430)*100%)] lg:pt-[calc((509/879)*100%)] xl:col-span-5/21 '
-      : 'pt-[calc((251/430)*100%)] lg:pt[calc((463/683)*100%)] xl:col-span-7/-7 ';
+      : 'pt-[calc((251/430)*100%)] lg:pt-[calc((463/683)*100%)] xl:col-span-7/-7 ';
+
+  function handleLoaded() {
+    setLoaded(true);
+  }
 
   return (
-    <div className='grid grid-cols-[repeat(24,1fr)] lg:px-0 mb-6 lg:mb-10 overflow-hidden'>
+    <div className='grid grid-cols-[repeat(24,1fr)] lg:px-0 mb-6 lg:mb-10 overflow-hidde'>
       <m.div
         initial={{scale: 1.1, opacity: 0}}
-        animate={{scale: 1, opacity: 1}}
+        animate={loaded && {scale: 1, opacity: 1}}
         transition={{type: 'spring', duration: 0.7, bounce: 0.5}}
         className={imageAspectRatio + 'col-span-full lg:col-span-3/23 relative'}
         aria-hidden='true'
@@ -29,6 +36,7 @@ export default function TopImage({src}: Props) {
           alt=''
           fill={true}
           sizes='(max-width: 1024px) 1024px'
+          onLoadingComplete={handleLoaded}
         />
 
         <Image
@@ -38,6 +46,7 @@ export default function TopImage({src}: Props) {
           alt=''
           fill={true}
           sizes='(min-width: 1024px) 1784px'
+          onLoadingComplete={handleLoaded}
         />
       </m.div>
     </div>
