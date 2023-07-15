@@ -4,7 +4,7 @@ import {m} from 'framer-motion';
 import {SetStateAction, Dispatch} from 'react';
 
 const menuStyle =
-  'flex flex-col gap-2 h-xs:gap-4 h-s:gap-8 items-end xs:mb-8 relative z-10';
+  'flex flex-col gap-5 h-xs:gap-8 h-s:gap-12 items-end xs:mb-8 relative z-10';
 
 const animationEasing = [0.32, 0.72, 0, 1];
 const animation = {
@@ -118,7 +118,7 @@ export default function MobileMenu({
       variants={animation.variants.menuAnimation}
       className='fixed z-30 top-0 left-0 pt-28 pr-8 pb-8 h-screen w-screen bg-primary-yellow lg:hidden overflow-hidden'
     >
-      <div className={`${menuStyle} mb-2 h-xs:mb-4 h-s:mb-8`}>
+      <div className={`${menuStyle} mb-5 h-xs:mb-8 h-s:mb-12`}>
         {links.slice(0, 4).map((link, index) => (
           <NavLink
             href={link.href}
@@ -187,6 +187,7 @@ function NavLink({
       variants={animation.variants.linkAnimatiion}
       custom={order}
       className={`${active} font-calistoga text-2xl capitalize`}
+      whileTap={{color: 'rgb(229, 65, 38)', scale: 1.1}}
     >
       <Link href={href} onClick={() => setStatus(false)} target={target}>
         <span>{name}</span>

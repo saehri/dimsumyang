@@ -20,7 +20,7 @@ export default function Header() {
         <div>
           <div
             id='header'
-            className='flex absolute w-full top-0 left-0 z-[1000] isolate items-end pt-10 px-5 lg:px-0 lg:pt-0 lg:grid lg:grid-cols-[repeat(24,1fr)]'
+            className='flex fixed w-full top-0 left-0 z-[1000] isolate items-end pt-10 px-5 lg:px-0 lg:pt-0 lg:grid lg:grid-cols-[repeat(24,1fr)]'
           >
             <MobileBottomNavigation
               mobileSecondaryNavStatus={setMobileMenuVisible}
